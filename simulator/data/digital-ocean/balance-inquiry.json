@@ -1,0 +1,18 @@
+{
+  "rc": "100",
+  "accountSource": {
+    "number": "1102109977",
+    "name": "MIA",
+    "alias": "MIA",
+    "status": "ACTIVE",
+    "type": "S",
+    "currency": "IDR",
+    "debet": true,
+    "inquiry": true,
+    "credit": true,
+    "limit": 0,
+    "productName": "Tabungan BBA",
+    "amount": "1512345678999.77",
+    "sign": "C"
+  }
+}

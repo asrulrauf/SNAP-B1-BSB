@@ -1,0 +1,25 @@
+{
+    "rc": "100",
+    "accountSourceNo": "1002109933",
+    "accountSourceName": "MIA",
+    "transactionDate": 1627312561000,
+    "transactionId": 44237,
+    "stan": "221601",
+    "amount": "100000",
+    "detailPayment": {
+        "fee": "5000",
+        "customerName": "SUMIYATI",
+        "minAmount": "1200000",
+        "totalAmount": "1205000",
+        "provider": "PT HARAPAN INDAH",
+        "billDetail": [
+            "20190729;300000",
+            "20190728;300000",
+            "20190727;300000",
+            "20190726;300000",
+            "20190725;300000"
+        ],
+        "atmCardNo": "504978******0008"
+    },
+    "refNum": "20210726221601"
+}

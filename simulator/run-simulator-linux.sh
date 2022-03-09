@@ -1,0 +1,1 @@
+nohup nodemon bsb.js &

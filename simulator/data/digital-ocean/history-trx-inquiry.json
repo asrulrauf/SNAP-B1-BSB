@@ -1,0 +1,156 @@
+{
+    "rc": "100",
+    "accountSourceDetail": {
+        "number": "01002109933",
+        "name": "MIA",
+        "alias": "MIA",
+        "status": "ACTIVE",
+        "type": "S",
+        "currency": "IDR",
+        "debet": true,
+        "inquiry": true,
+        "credit": true,
+        "limit": 0,
+        "productName": "Tabungan BBA",
+        "amount": "10000000000.23",
+        "sign": "C"
+    },
+    "listHistoryTransaction": [
+        {
+            "traceNumber": "100001",
+            "amount": "5000000000000.56",
+            "description": "Transfer IBFT",
+            "sign": "C",
+            "date": 1589512300000,
+            "currentBalance": "10000000000.23"
+        },
+        {
+            "traceNumber": "100002",
+            "amount": "5200000000000.23",
+            "description": "Transfer IBFT",
+            "sign": "C",
+            "date": 1589512300000,
+            "currentBalance": "-4990000000000.33"
+        },
+        {
+            "traceNumber": "100003",
+            "amount": "5300000000000.19",
+            "description": "Transfer IBFT",
+            "sign": "C",
+            "date": 1589512300000,
+            "currentBalance": "-10190000000000.56"
+        },
+        {
+            "traceNumber": "100004",
+            "amount": "5400000000000.49",
+            "description": "Tagihan Listrik",
+            "sign": "C",
+            "date": 1589512300000,
+            "currentBalance": "-15490000000000.75"
+        },
+        {
+            "traceNumber": "100001",
+            "amount": "55000000000000.73",
+            "description": "Pulsa Simpati",
+            "sign": "C",
+            "date": 1589512300000,
+            "currentBalance": "-20890000000001.24"
+        },
+        {
+            "traceNumber": "100006",
+            "amount": "5600000000000.82",
+            "description": "Tagihan Listrik",
+            "sign": "C",
+            "date": 1589512300000,
+            "currentBalance": "-75890000000001.97"
+        },
+        {
+            "traceNumber": "100007",
+            "amount": "5700000000000.56",
+            "description": "Pulsa Simpati",
+            "sign": "C",
+            "date": 1589512300000,
+            "currentBalance": "-81490000000002.79"
+        },
+        {
+            "traceNumber": "40863691",
+            "amount": "150000.98",
+            "description": "PAYMENT E-BANKING             354613667 ",
+            "sign": "D",
+            "date": 1590426000000,
+            "currentBalance": "-87190000000003.35"
+        },
+        {
+            "traceNumber": "40863689",
+            "amount": "50000.67",
+            "description": "PAYMENT E-BANKING             12345678 ",
+            "sign": "D",
+            "date": 1590426000000,
+            "currentBalance": "-87189999850002.37"
+        },
+        {
+            "traceNumber": "40863687",
+            "amount": "50000.45",
+            "description": "PAYMENT E-BANKING             123456789 ",
+            "sign": "D",
+            "date": 1590426000000,
+            "currentBalance": "-87189999800001.70"
+        },
+        {
+            "traceNumber": "40863689",
+            "amount": "50000.78",
+            "description": "PAYMENT E-BANKING             12345678 ",
+            "sign": "D",
+            "date": 1590426000000,
+            "currentBalance": "-87189999750001.25"
+        },
+        {
+            "traceNumber": "40863679",
+            "amount": "150000.24",
+            "description": "PAYMENT E-BANKING             12345678 ",
+            "sign": "D",
+            "date": 1590426000000,
+            "currentBalance": "-87189999700000.47"
+        },
+        {
+            "traceNumber": "40861331",
+            "amount": "50000.13",
+            "description": "PAYMENT E-BANKING             76543210 ",
+            "sign": "D",
+            "date": 1589475600000,
+            "currentBalance": "-87189999550000.23"
+        },
+        {
+            "traceNumber": "40861319",
+            "amount": "50000.95",
+            "description": "PAYMENT E-BANKING             76543210 ",
+            "sign": "D",
+            "date": 1589475600000,
+            "currentBalance": "-87189999500000.10"
+        },
+        {
+            "traceNumber": "40860642",
+            "amount": "100000.76",
+            "description": "PAYMENT E-BANKING             1234567 ",
+            "sign": "D",
+            "date": 1589475600000,
+            "currentBalance": "-87189999449999.15"
+        },
+        {
+            "traceNumber": "40860638",
+            "amount": "100000.66",
+            "description": "PPAYMENT E-BANKING             1234567 ",
+            "sign": "D",
+            "date": 1589475600000,
+            "currentBalance": "-87189999349998.39"
+        },
+        {
+            "traceNumber": "40860493",
+            "amount": "50000.97",
+            "description": "PAYMENT E-BANKING             7654322 ",
+            "sign": "D",
+            "date": 1589475600000,
+            "currentBalance": "-87189999249997.73"
+        }
+    ]
+}
