@@ -5911,17 +5911,17 @@
 	<fval name="logSuccess"><value>McAfee antivirus: No virus found in message</value></fval>
 	<fval name="type"><value>McAfeeVirusCheck</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-4803552671686361517" parentPK="-8143802188856851900">
-	<fval name="logFailure"><value>Failed to request SAML authentication assertion from SAML PDP</value></fval>
-	<fval name="logFatal"><value>Error while requesting SAML authentication assertion from SAML PDP. Error: ${circuit.exception}</value></fval>
-	<fval name="logSuccess"><value>Requested SAML authentication assertion from SAML PDP for ${samlpdp.subject.id}</value></fval>
-	<fval name="type"><value>SamlAuthNPdpFilter</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="4366009138815010456" parentPK="-8143802188856851900">
 	<fval name="logFailure"><value>Failed to authenticate using the WS Username token</value></fval>
 	<fval name="logFatal"><value>Error occurred while authenticating using the WS Username token. Error: ${circuit.exception}</value></fval>
 	<fval name="logSuccess"><value>Authenticated using the WS Username token</value></fval>
 	<fval name="type"><value>WsUsernameTokenFilter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-4803552671686361517" parentPK="-8143802188856851900">
+	<fval name="logFailure"><value>Failed to request SAML authentication assertion from SAML PDP</value></fval>
+	<fval name="logFatal"><value>Error while requesting SAML authentication assertion from SAML PDP. Error: ${circuit.exception}</value></fval>
+	<fval name="logSuccess"><value>Requested SAML authentication assertion from SAML PDP for ${samlpdp.subject.id}</value></fval>
+	<fval name="type"><value>SamlAuthNPdpFilter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="8968093898873775657" parentPK="-8143802188856851900">
 	<fval name="logFailure"><value>Failed to echo back the message and current attributes</value></fval>
@@ -6421,21 +6421,6 @@
 	<fval name="logSuccess"><value>Inserted timestamp successfully</value></fval>
 	<fval name="type"><value>InsertTimestampFilter</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AccessLogger" entityPK="3555736635682881796" parentPK="0">
-	<fval name="name"><value>AccessLogger</value></fval>
-	<fval name="pattern"><value>%h %l %u %t &quot;%r&quot; %s %b</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AccessLoggerFile" entityPK="-3403282376840848546" parentPK="3555736635682881796">
-	<fval name="baseLogFileName"><value>access</value></fval>
-	<fval name="directoryName"><value>logs/access</value></fval>
-	<fval name="enabled"><value>false</value></fval>
-	<fval name="format"><value>${level} ${timestamp} ${id} &apos;${text}&apos; ${filterType} ${filterName}</value></fval>
-	<fval name="logFileNameExtension"><value>.log</value></fval>
-	<fval name="maxFiles"><value>20</value></fval>
-	<fval name="maxLogFileSize"><value>1000</value></fval>
-	<fval name="name"><value>AccessLoggerFileDetails</value></fval>
-	<fval name="rollOverDaily"><value>true</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CronExpressionGroup" entityPK="1807377583989066410" parentPK="0">
 	<fval name="name"><value>Cron Expression Library</value></fval>
 </entity>
@@ -6523,870 +6508,20 @@
 	<fval name="expression"><value>0 0/3 17-23 * * ?</value></fval>
 	<fval name="name"><value>Run every three minutes but only between 5pm and 11pm</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="-1194866472205846287" parentPK="0">
-	<fval name="name"><value>BSB-SNAP</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="1810353899867771467" parentPK="-1194866472205846287">
-	<fval name="name"><value>SNAP Token B2B</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="-8487908141546621523" parentPK="1810353899867771467">
-	<fval name="name"><value>v1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-8025300494169132150" parentPK="-8487908141546621523">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Set Timestamp</value></fval>
-	<fval name="start"><value contentType="reference">-1516107617258412129</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JavaScriptFilter" entityPK="-1516107617258412129" parentPK="-8025300494169132150">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="consumedProperties"></fval>
-	<fval name="engineName"><value>groovy</value></fval>
-	<fval name="generatedProperties"></fval>
-	<fval name="logFailure"><value>Failed script filter</value></fval>
-	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Passed script filter</value></fval>
-	<fval name="name"><value>Scripting Language</value></fval>
-	<fval name="requiredProperties"></fval>
-	<fval name="script"><value>def invoke(msg)         {&#xD;&#xA;&#x9;def date = new Date();&#xD;&#xA;&#x9;def dtFormat = &quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&apos;+07:00&apos;&quot;;&#xD;&#xA;&#x9;def date1=date.format(dtFormat, TimeZone.getTimeZone(&apos;GMT+7&apos;));&#xD;&#xA;&#x9;msg.put(&quot;input.timestamp&quot;,date1);&#xD;&#xA;&#x9;return true;         &#xD;&#xA;}</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="7023111560693280294" parentPK="-8487908141546621523">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Access Token B2B</value></fval>
-	<fval name="start"><value contentType="reference">-913664863792271212</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="621579200491291417" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeValue"><value>${kps.PortalOAuthStore[bsbApiKey].secret}</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
-	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Set the attribute value</value></fval>
-	<fval name="messageAttribute"><value>bsbApiSecret</value></fval>
-	<fval name="name"><value>Set Attribute Client Secret Key</value></fval>
-	<fval name="successNode"><value contentType="reference">1490804069700374506</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="-6167133482629884773" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeValue"><value>${kps.PortalOAuthStore[authentication.subject.id].cert}</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
-	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Set the attribute value</value></fval>
-	<fval name="messageAttribute"><value>public.key</value></fval>
-	<fval name="name"><value>Set Attribute Public Key</value></fval>
-	<fval name="successNode"><value contentType="reference">-1432280045161392311</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthenticateAPIKeyFilter" entityPK="1490804069700374506" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="apiKeyAuthorizationFormatClass"><value>com.vordel.circuit.apikeys.AWSS3AuthZHeader</value></fval>
-	<fval name="apiKeyHTTPLocation"><value>HEADER</value></fval>
-	<fval name="apiKeyName"><value>X-CLIENT-KEY</value></fval>
-	<fval name="apiKeySelector"><value>${http.client.getCgiArgument(&quot;apiKey&quot;)}</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="expiresFormat"><value></value></fval>
-	<fval name="expiresLocation"><value>QUERYSTRING</value></fval>
-	<fval name="expiresLocationName"><value>Expires</value></fval>
-	<fval name="expiresType"><value>MILLISECONDS_SINCE_EPOC</value></fval>
-	<fval name="expiresWiggleRoom"><value>60000</value></fval>
-	<fval name="extractSecret"><value>1</value></fval>
-	<fval name="failureNode"><value contentType="reference">1799182261423076634</value></fval>
-	<fval name="kpsAlias"><value>PortalOAuthStore</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="name"><value>Authenticate Header X-CLIENT-KEY</value></fval>
-	<fval name="performAuthentication"><value>1</value></fval>
-	<fval name="secretAuthorizationFormatClass"><value>com.vordel.circuit.apikeys.HTTPBasicAuthZHeader</value></fval>
-	<fval name="secretHTTPLocation"><value>QUERYSTRING</value></fval>
-	<fval name="secretKPSFieldName"><value>secret</value></fval>
-	<fval name="secretLocation"><value>SELECTOR</value></fval>
-	<fval name="secretLocationName"><value>apiSecret</value></fval>
-	<fval name="secretProcessorClass"><value>com.vordel.circuit.apikeys.AuthenticateS3RequestAuthZHeader</value></fval>
-	<fval name="secretSelector"><value>${bsbApiSecret}</value></fval>
-	<fval name="successNode"><value contentType="reference">-3092182755338611106</value></fval>
-	<fval name="timeStampFormat"><value>EEE, dd MMM yyyy HH:mm:ss zzz</value></fval>
-	<fval name="timeStampLocation"><value>HEADER</value></fval>
-	<fval name="timeStampLocationName"><value>Date</value></fval>
-	<fval name="timeStampType"><value>DATE_FORMAT</value></fval>
-	<fval name="timeStampWiggleRoom"><value>60000</value></fval>
-	<fval name="validateExpires"><value>0</value></fval>
-	<fval name="validateTimeStamp"><value>0</value></fval>
-	<fval name="whereToLookForAPIKey"><value>HTTP_VALUES</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchFilter" entityPK="179809698621825025" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeName"><value>${content.body.getParameters().get(&quot;grant_type&quot;)}</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="defaultCircuit"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='Policy Library'/><key type='FilterCircuit'><id field='name' value='Return HTTP Error 401: Unauthorized'/></key></key>	</value></fval>
-	<fval name="defaultOption"><value>RETURN_DEFAULT_CIRCUIT</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="name"><value>Decide what grant type to use</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="-5509382106685158632" parentPK="179809698621825025">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='Client Credentials'/></key></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>client_credentials</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001646676109752-ffffffffd50e21c8-1</value></fval>
-	<fval name="priority"><value>0</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CompareAttributeFilter" entityPK="-1432280045161392311" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="failureNode"><value contentType="reference">-4456803795806675673</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="matchingRule"><value>MATCH_ALL</value></fval>
-	<fval name="name"><value>Dev Only &apos;Bypass Signature&apos;</value></fval>
-	<fval name="negateOpOnNull"><value>0</value></fval>
-	<fval name="successNode"><value contentType="reference">-3745395317665198688</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeCompare" entityPK="-352576050468770476" parentPK="-1432280045161392311">
-	<fval name="attrName"><value>${http.headers.Host}</value></fval>
-	<fval name="expression"><value>8080</value></fval>
-	<fval name="matchType"><value>CONTAINS</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeCompare" entityPK="7268324814342220770" parentPK="-1432280045161392311">
-	<fval name="attrName"><value>${apikey.enable}</value></fval>
-	<fval name="expression"><value>false</value></fval>
-	<fval name="matchType"><value>IS</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="1799182261423076634" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeValue"><value>X-CLIENT-KEY</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
-	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Set the attribute value</value></fval>
-	<fval name="messageAttribute"><value>fieldname</value></fval>
-	<fval name="name"><value>Set Attribute XCLIENTKEY</value></fval>
-	<fval name="successNode"><value contentType="reference">-638904346169843930</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Reflector" entityPK="974551225688566526" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="httpResponseStatus"><value>400</value></fval>
-	<fval name="logFailure"><value>Failed to echo back the message</value></fval>
-	<fval name="logFatal"><value>Error occurred while echoing the message. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Successfully echoed back the message</value></fval>
-	<fval name="name"><value>Reflect 400</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeExtractHTTPHeaderFilter" entityPK="-913664863792271212" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeName"><value>bsbApiKey</value></fval>
-	<fval name="base64Decode"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">1663884985096739532</value></fval>
-	<fval name="failureNode"><value contentType="reference">1799182261423076634</value></fval>
-	<fval name="headerName"><value>X-CLIENT-KEY</value></fval>
-	<fval name="logFailure"><value>Failed to extract attribute HTTP header</value></fval>
-	<fval name="logFatal"><value>Error occurred while extracting attributes from HTTP header. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Extracted attribute from HTTP header</value></fval>
-	<fval name="name"><value>Retrieve from HTTP header Client Key</value></fval>
-	<fval name="successNode"><value contentType="reference">190164783471370133</value></fval>
-	<fval name="useQueryParameter"><value>0</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JavaScriptFilter" entityPK="-3745395317665198688" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="consumedProperties"></fval>
-	<fval name="engineName"><value>groovy</value></fval>
-	<fval name="generatedProperties"></fval>
-	<fval name="logFailure"><value>Failed script filter</value></fval>
-	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Passed script filter</value></fval>
-	<fval name="name"><value>Encode Base64 Client and Secret Key</value></fval>
-	<fval name="requiredProperties"></fval>
-	<fval name="script"><value>import java.lang.String&#xD;&#xA;import static java.nio.charset.StandardCharsets.UTF_8&#xD;&#xA;&#xD;&#xA;def invoke(msg){ &#xD;&#xA;&#x9;def dataEncode = msg.get(&quot;bsbApiKey&quot;) + &apos;:&apos; + msg.get(&quot;bsbApiSecret&quot;)&#x9;&#xD;&#xA;&#x9;byte[] dataGetBytes = dataEncode.getBytes(UTF_8)&#xD;&#xA;&#x9;def encodedData = dataGetBytes.encodeBase64().toString()&#xD;&#xA;&#xD;&#xA;&#x9;msg.put(&quot;idsecretbase64&quot;, encodedData)&#xD;&#xA;&#xD;&#xA;&#x9;return true&#xD;&#xA;}</value></fval>
-	<fval name="successNode"><value contentType="reference">-7074325493265248308</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ValidateTimeStampFilter" entityPK="1295997933176747602" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="driftTime"><value>600000</value></fval>
-	<fval name="failureNode"><value contentType="reference">5540289357231201710</value></fval>
-	<fval name="logFailure"><value>Invalid timestamp found in message</value></fval>
-	<fval name="logFatal"><value>Error during validation of timestamp. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Timestamp is valid</value></fval>
-	<fval name="name"><value>Validate Timestamp 2</value></fval>
-	<fval name="successNode"><value contentType="reference">1703014745061413363</value></fval>
-	<fval name="timeFormat"><value>yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;+&apos;07:00</value></fval>
-	<fval name="timestampAttributeName"><value>${xtimestamp}</value></fval>
-	<fval name="timestampCheckType"><value>1</value></fval>
-	<fval name="timezone"><value>Asia/Jakarta</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="5540289357231201710" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeValue"><value>X-TIMESTAMP</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
-	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Set the attribute value</value></fval>
-	<fval name="messageAttribute"><value>fieldname</value></fval>
-	<fval name="name"><value>Set Attribute XTIMESTAMP</value></fval>
-	<fval name="successNode"><value contentType="reference">-638904346169843930</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AddHTTPHeaderFilter" entityPK="-7074325493265248308" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="addWhere"><value>httpheaders</value></fval>
-	<fval name="base64Encode"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="failureNode"><value contentType="reference">-1</value></fval>
-	<fval name="headerName"><value>Authorization</value></fval>
-	<fval name="headerValue"><value>Basic ${idsecretbase64}</value></fval>
-	<fval name="logFailure"><value>Failed in adding the HTTP header to the message</value></fval>
-	<fval name="logFatal"><value>Error in adding the HTTP header to the message. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in adding the HTTP header to the message</value></fval>
-	<fval name="name"><value>Add HTTP Header Authorization</value></fval>
-	<fval name="overwriteExistingHeader"><value>1</value></fval>
-	<fval name="successNode"><value contentType="reference">-3531639439390531599</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeExtractHTTPHeaderFilter" entityPK="190164783471370133" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeName"><value>xtimestamp</value></fval>
-	<fval name="base64Decode"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">1663884985096739532</value></fval>
-	<fval name="failureNode"><value contentType="reference">5540289357231201710</value></fval>
-	<fval name="headerName"><value>X-TIMESTAMP</value></fval>
-	<fval name="logFailure"><value>Failed to extract attribute HTTP header</value></fval>
-	<fval name="logFatal"><value>Error occurred while extracting attributes from HTTP header. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Extracted attribute from HTTP header</value></fval>
-	<fval name="name"><value>Retrieve from HTTP header XTIMESTAMP</value></fval>
-	<fval name="successNode"><value contentType="reference">621579200491291417</value></fval>
-	<fval name="useQueryParameter"><value>0</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JavaScriptFilter" entityPK="-4456803795806675673" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="consumedProperties"></fval>
-	<fval name="engineName"><value>groovy</value></fval>
-	<fval name="generatedProperties"></fval>
-	<fval name="logFailure"><value>Failed script filter</value></fval>
-	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Passed script filter</value></fval>
-	<fval name="name"><value>Signature Validation</value></fval>
-	<fval name="requiredProperties"></fval>
-	<fval name="script"><value>import java.util.ArrayList&#xD;&#xA;import java.lang.String&#xD;&#xA;import javax.crypto.*&#xD;&#xA;import java.security.*&#xD;&#xA;import java.security.spec.*&#xD;&#xA;import javax.crypto.Mac&#xD;&#xA;import javax.crypto.spec.SecretKeySpec&#xD;&#xA;import static java.nio.charset.StandardCharsets.UTF_8&#xD;&#xA;import com.vordel.trace.Trace&#xD;&#xA;&#xD;&#xA;def invoke(msg){ &#xD;&#xA;&#x9;def apikey = msg.get(&quot;bsbApiKey&quot;)&#xD;&#xA;&#x9;String publicKeyRaw = msg.get(&quot;public.key&quot;)&#xD;&#xA;&#x9;byte[] publicKeyGetBytes = publicKeyRaw.getBytes(UTF_8)&#xD;&#xA;&#xD;&#xA;&#x9;def timestampheader = msg.get(&quot;http.headers&quot;).get(&quot;X-TIMESTAMP&quot;)&#xD;&#xA;&#x9;def signatureheader = msg.get(&quot;http.headers&quot;).get(&quot;X-SIGNATURE&quot;)&#xD;&#xA;&#x9;byte[] signatureDecoded = signatureheader.decodeBase64()&#xD;&#xA;&#xD;&#xA;&#x9;def data = apikey+&apos;|&apos;+timestampheader&#xD;&#xA;&#x9;byte[] messageBytes = data.getBytes(UTF_8)&#xD;&#xA;&#xD;&#xA;&#x9;KeyFactory keyFactory = KeyFactory.getInstance(&quot;RSA&quot;)&#xD;&#xA;&#x9;EncodedKeySpec keySpec = new X509EncodedKeySpec(publicKeyGetBytes)&#xD;&#xA;&#x9;PublicKey pubKey = keyFactory.generatePublic(keySpec)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;Signature signature = Signature.getInstance(&quot;SHA256withRSA&quot;)&#xD;&#xA;&#x9;signature.initVerify(pubKey)&#xD;&#xA;&#x9;signature.update(messageBytes)&#xD;&#xA;&#x9;boolean isCorrect = signature.verify(signatureDecoded)&#xD;&#xA;&#x9;if(isCorrect) {&#xD;&#xA;&#x9;&#x9;msg.put(&quot;signatureValidated&quot;,&quot;true&quot;)&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;msg.put(&quot;signatureValidated&quot;,&quot;false&quot;)&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return true&#xD;&#xA;}</value></fval>
-	<fval name="successNode"><value contentType="reference">909480161701300809</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="1703014745061413363" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeValue"><value>${kps.PortalOAuthStore[bsbApiKey].enabled}</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
-	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Set the attribute value</value></fval>
-	<fval name="messageAttribute"><value>oauth.enable</value></fval>
-	<fval name="name"><value>Set Attribute OAuth Enable</value></fval>
-	<fval name="successNode"><value contentType="reference">-6167133482629884773</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CompareAttributeFilter" entityPK="909480161701300809" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="failureNode"><value contentType="reference">-3149164208880009108</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="matchingRule"><value>MATCH_ALL</value></fval>
-	<fval name="name"><value>Compare Attribute</value></fval>
-	<fval name="negateOpOnNull"><value>0</value></fval>
-	<fval name="successNode"><value contentType="reference">-3745395317665198688</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeCompare" entityPK="-3109058586782755162" parentPK="909480161701300809">
-	<fval name="attrName"><value>oauth.enable</value></fval>
-	<fval name="expression"><value>true</value></fval>
-	<fval name="matchType"><value>IS</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeCompare" entityPK="-2435309442087644512" parentPK="909480161701300809">
-	<fval name="attrName"><value>signatureValidated</value></fval>
-	<fval name="expression"><value>true</value></fval>
-	<fval name="matchType"><value>IS</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="-3149164208880009108" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeValue"><value>X-SIGNATURE</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
-	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Set the attribute value</value></fval>
-	<fval name="messageAttribute"><value>fieldname</value></fval>
-	<fval name="name"><value>Set Attribute XSIGNATURE</value></fval>
-	<fval name="successNode"><value contentType="reference">-638904346169843930</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ValidateTimeStampFilter" entityPK="-3092182755338611106" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="driftTime"><value>600000</value></fval>
-	<fval name="failureNode"><value contentType="reference">5540289357231201710</value></fval>
-	<fval name="logFailure"><value>Invalid timestamp found in message</value></fval>
-	<fval name="logFatal"><value>Error during validation of timestamp. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Timestamp is valid</value></fval>
-	<fval name="name"><value>Validate Timestamp</value></fval>
-	<fval name="successNode"><value contentType="reference">1295997933176747602</value></fval>
-	<fval name="timeFormat"><value>yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;+&apos;07:00</value></fval>
-	<fval name="timestampAttributeName"><value>${xtimestamp}</value></fval>
-	<fval name="timestampCheckType"><value>2</value></fval>
-	<fval name="timezone"><value>Asia/Jakarta</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="-638904346169843930" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='Response Header'/></key></key></key></key>	</value></fval>
-	<fval name="logFailure"><value>Failed in calling policy shortcut</value></fval>
-	<fval name="logFatal"><value>Error in calling policy shortcut circuit. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in calling policy shortcut</value></fval>
-	<fval name="name"><value>Call &apos;Response Header&apos;</value></fval>
-	<fval name="successNode"><value contentType="reference">-1535901463624646767</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ChangeMessageFilter" entityPK="-1535901463624646767" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="body"><value>{&#xD;&#xA;    &quot;responseCode&quot;: &quot;4000002&quot;,&#xD;&#xA;    &quot;responseMessage&quot;: &quot;Invalid Mandatory Field ${fieldname}&quot;,&#xD;&#xA;}</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="logFailure"><value>Failed in setting the message</value></fval>
-	<fval name="logFatal"><value>Error in setting the message. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in setting the message</value></fval>
-	<fval name="name"><value>Message Invalid Mandatory</value></fval>
-	<fval name="outputContentType"><value>application/json</value></fval>
-	<fval name="successNode"><value contentType="reference">974551225688566526</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchFilter" entityPK="-3531639439390531599" parentPK="7023111560693280294">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeName"><value>${content.body.getParameters().get(&quot;grant_type&quot;)}</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="defaultCircuit"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='Policy Library'/><key type='FilterCircuit'><id field='name' value='Return HTTP Error 401: Unauthorized'/></key></key>	</value></fval>
-	<fval name="defaultOption"><value>RETURN_DEFAULT_CIRCUIT</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="name"><value>Copy of &apos;Decide what grant type to use&apos;{1}</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="5350635218862524500" parentPK="-3531639439390531599">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='Refresh'/></key></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>refresh_token</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001340660962253-0000000023c88300-1</value></fval>
-	<fval name="priority"><value>4</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="1433123247180504751" parentPK="-3531639439390531599">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='Client Credentials'/></key></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>client_credentials</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001340660962253-0000000023c88300-3</value></fval>
-	<fval name="priority"><value>2</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="2972095891747259233" parentPK="-3531639439390531599">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='Resource Owner Password Credentials'/></key></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>password</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001340660962253-0000000023c88300-4</value></fval>
-	<fval name="priority"><value>3</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="-481972780371174720" parentPK="-3531639439390531599">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='Access Code'/></key></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>authorization_code</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001340660962253-0000000023c88300-2</value></fval>
-	<fval name="priority"><value>1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="3596297338272192534" parentPK="-8487908141546621523">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Response Header Timestamp</value></fval>
-	<fval name="start"><value contentType="reference">-3138709197552016761</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JavaScriptFilter" entityPK="-3138709197552016761" parentPK="3596297338272192534">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="consumedProperties"></fval>
-	<fval name="engineName"><value>groovy</value></fval>
-	<fval name="generatedProperties"></fval>
-	<fval name="logFailure"><value>Failed script filter</value></fval>
-	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Passed script filter</value></fval>
-	<fval name="name"><value>Scripting Language</value></fval>
-	<fval name="requiredProperties"></fval>
-	<fval name="script"><value>def invoke(msg)         {&#xD;&#xA;&#x9;def date = new Date();&#xD;&#xA;&#x9;def dtFormat = &quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&apos;+07:00&apos;&quot;;&#xD;&#xA;&#x9;def date1 =date.format(dtFormat, TimeZone.getTimeZone(&apos;GMT+7&apos;));&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;def dtFormat2 = &quot;yyyyMM&quot;;&#xD;&#xA;&#x9;def date2 =date.format(dtFormat2, TimeZone.getTimeZone(&apos;GMT+7&apos;));&#xD;&#xA;&#xD;&#xA;&#x9;def dtFormat3 = &quot;yyyyMMddHHmmssSSS&quot;;&#xD;&#xA;&#x9;def date3 =date.format(dtFormat3, TimeZone.getTimeZone(&apos;GMT+7&apos;));&#xD;&#xA;&#xD;&#xA;&#x9;msg.put(&quot;input.timestamp&quot;,date1);&#xD;&#xA;&#x9;msg.put(&quot;short.timestamp&quot;,date2);&#xD;&#xA;&#x9;msg.put(&quot;datastatic.timestamp&quot;,date3);&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;return true;         &#xD;&#xA;}</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="389469384347940083" parentPK="-8487908141546621523">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Response Header</value></fval>
-	<fval name="start"><value contentType="reference">-2446023029064708898</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RemoveHTTPHeaderFilter" entityPK="-2446023029064708898" parentPK="389469384347940083">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="errorNoHeader"><value>0</value></fval>
-	<fval name="headerName"><value>Authorization</value></fval>
-	<fval name="logFailure"><value>Failed in removing the HTTP header from the message</value></fval>
-	<fval name="logFatal"><value>Error in removing the HTTP header from the message. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in removing the HTTP header from the message</value></fval>
-	<fval name="name"><value>Remove HTTP Header Authorization</value></fval>
-	<fval name="successNode"><value contentType="reference">-2961765535994714402</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RemoveHTTPHeaderFilter" entityPK="-2961765535994714402" parentPK="389469384347940083">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="errorNoHeader"><value>0</value></fval>
-	<fval name="headerName"><value>X-SIGNATURE</value></fval>
-	<fval name="logFailure"><value>Failed in removing the HTTP header from the message</value></fval>
-	<fval name="logFatal"><value>Error in removing the HTTP header from the message. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in removing the HTTP header from the message</value></fval>
-	<fval name="name"><value>Remove HTTP Header X-SIGNATURE</value></fval>
-	<fval name="successNode"><value contentType="reference">6433480858255480372</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="6433480858255480372" parentPK="389469384347940083">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='Response Header Timestamp'/></key></key></key></key>	</value></fval>
-	<fval name="logFailure"><value>Failed in calling policy shortcut</value></fval>
-	<fval name="logFatal"><value>Error in calling policy shortcut circuit. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in calling policy shortcut</value></fval>
-	<fval name="name"><value>Call &apos;Set Response Header Timestamp&apos;</value></fval>
-	<fval name="successNode"><value contentType="reference">2582257637864911309</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AddHTTPHeaderFilter" entityPK="2582257637864911309" parentPK="389469384347940083">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="addWhere"><value>httpheaders</value></fval>
-	<fval name="base64Encode"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="headerName"><value>X-TIMESTAMP</value></fval>
-	<fval name="headerValue"><value>${input.timestamp}</value></fval>
-	<fval name="logFailure"><value>Failed in adding the HTTP header to the message</value></fval>
-	<fval name="logFatal"><value>Error in adding the HTTP header to the message. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in adding the HTTP header to the message</value></fval>
-	<fval name="name"><value>Add HTTP Header</value></fval>
-	<fval name="overwriteExistingHeader"><value>1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-2121685671039323486" parentPK="-8487908141546621523">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Client Credentials</value></fval>
-	<fval name="start"><value contentType="reference">-9130650029215192579</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="-8600425547484178335" parentPK="-2121685671039323486">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='Set Timestamp'/></key></key></key></key>	</value></fval>
-	<fval name="logFailure"><value>Failed in calling policy shortcut</value></fval>
-	<fval name="logFatal"><value>Error in calling policy shortcut circuit. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in calling policy shortcut</value></fval>
-	<fval name="name"><value>call &apos;timestamp&apos;</value></fval>
-	<fval name="successNode"><value contentType="reference">-5884600786444336193</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AddHTTPHeaderFilter" entityPK="-5884600786444336193" parentPK="-2121685671039323486">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="addWhere"><value>httpheaders</value></fval>
-	<fval name="base64Encode"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="headerName"><value>X-TIMESTAMP</value></fval>
-	<fval name="headerValue"><value>${input.timestamp}</value></fval>
-	<fval name="logFailure"><value>Failed in adding the HTTP header to the message</value></fval>
-	<fval name="logFatal"><value>Error in adding the HTTP header to the message. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in adding the HTTP header to the message</value></fval>
-	<fval name="name"><value>Add HTTP Header</value></fval>
-	<fval name="overwriteExistingHeader"><value>1</value></fval>
-	<fval name="successNode"><value contentType="reference">4943152167433764813</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RemoveHTTPHeaderFilter" entityPK="4943152167433764813" parentPK="-2121685671039323486">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="errorNoHeader"><value>0</value></fval>
-	<fval name="headerName"><value>X-SIGNATURE</value></fval>
-	<fval name="logFailure"><value>Failed in removing the HTTP header from the message</value></fval>
-	<fval name="logFatal"><value>Error in removing the HTTP header from the message. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in removing the HTTP header from the message</value></fval>
-	<fval name="name"><value>Remove HTTP Header</value></fval>
-	<fval name="successNode"><value contentType="reference">-3243001398966538544</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONAddNodeFilter" entityPK="-3243001398966538544" parentPK="-2121685671039323486">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="content"><value>&quot;2000000&quot;</value></fval>
-	<fval name="expression"><value>$</value></fval>
-	<fval name="expressionType"><value>0</value></fval>
-	<fval name="insertLocationType"><value>1</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="name"><value>JSON Add ResponseCode</value></fval>
-	<fval name="objectFieldName"><value>responseCode</value></fval>
-	<fval name="successNode"><value contentType="reference">3267170271756135153</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONAddNodeFilter" entityPK="3267170271756135153" parentPK="-2121685671039323486">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="content"><value>&quot;Successful&quot;</value></fval>
-	<fval name="expression"><value>$</value></fval>
-	<fval name="expressionType"><value>0</value></fval>
-	<fval name="insertLocationType"><value>1</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="name"><value>JSON Add ResponseMessage</value></fval>
-	<fval name="objectFieldName"><value>responseMessage</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ClientCredentialsFilter" entityPK="-9130650029215192579" parentPK="-2121685671039323486">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="accessTokenExpiresInSecs"><value>3600</value></fval>
-	<fval name="accessTokenType"><value>Bearer</value></fval>
-	<fval name="accessTokenlength"><value>54</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="clientAttributeName"><value>authentication.subject.id</value></fval>
-	<fval name="clientIdHeaderName"><value>client_id</value></fval>
-	<fval name="clientSecretHeaderName"><value>client_secret</value></fval>
-	<fval name="compositeContext"><value>0</value></fval>
-	<fval name="locationOfClientDetails"><value>AuthorizationHeader</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="metricsMask"><value>1</value></fval>
-	<fval name="name"><value>Access Token using Client Credentials</value></fval>
-	<fval name="recordOutboundTxns"><value>true</value></fval>
-	<fval name="refreshChoice"><value>NoRefresh</value></fval>
-	<fval name="refreshTokenExpiresInSecs"><value>43200</value></fval>
-	<fval name="refreshTokenlength"><value>46</value></fval>
-	<fval name="scopeChoice"><value>Application</value></fval>
-	<fval name="scopeCircuitPK"><value contentType="reference">-1</value></fval>
-	<fval name="scopesForToken"><value>${scopes.for.token}</value></fval>
-	<fval name="scopesMustMatch"><value>Any</value></fval>
-	<fval name="serviceName"><value></value></fval>
-	<fval name="successNode"><value contentType="reference">-8600425547484178335</value></fval>
-	<fval name="tokenStore"><value contentType="reference">
-<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AccessTokenStoreGroup'><id field='name' value='Access Token Stores'/><key type='AccessTokenPersist'><id field='name' value='SNAP Oauth Access Token Store'/></key></key></key>	</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-8975751977992463788" parentPK="-8487908141546621523">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Refresh</value></fval>
-	<fval name="start"><value contentType="reference">8077966231283660928</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RefreshingAccessTokenFilter" entityPK="8077966231283660928" parentPK="-8975751977992463788">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="accessTokenExpiresInSecs"><value>3600</value></fval>
-	<fval name="accessTokenType"><value>Bearer</value></fval>
-	<fval name="accessTokenlength"><value>54</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="clientAttributeName"><value>authentication.application.id</value></fval>
-	<fval name="clientIdHeaderName"><value>client_id</value></fval>
-	<fval name="clientSecretHeaderName"><value>client_secret</value></fval>
-	<fval name="compositeContext"><value>0</value></fval>
-	<fval name="locationOfClientDetails"><value>AuthorizationHeader</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="metricsMask"><value>1</value></fval>
-	<fval name="name"><value>Refresh Access token</value></fval>
-	<fval name="recordOutboundTxns"><value>true</value></fval>
-	<fval name="refreshChoice"><value>NewRefresh</value></fval>
-	<fval name="refreshTokenExpiresInSecs"><value>43200</value></fval>
-	<fval name="refreshTokenlength"><value>46</value></fval>
-	<fval name="scopeChoice"><value>Application</value></fval>
-	<fval name="scopesForToken"><value>${scopes.for.token}</value></fval>
-	<fval name="scopesMustMatch"><value>Any</value></fval>
-	<fval name="serviceName"><value></value></fval>
-	<fval name="tokenStore"><value contentType="reference">
-<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AccessTokenStoreGroup'><id field='name' value='Access Token Stores'/><key type='AccessTokenPersist'><id field='name' value='OAuth Access Token Store'/></key></key></key>	</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-44312847007585936" parentPK="-8487908141546621523">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Access Code</value></fval>
-	<fval name="start"><value contentType="reference">-3937207554661967190</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CreateIDTokenFilter" entityPK="-3145974470338607525" parentPK="-44312847007585936">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="issuer"><value>${http.request.url}</value></fval>
-	<fval name="jwtExpiresIn"><value>60</value></fval>
-	<fval name="jwtSigner"><value contentType="reference">
-<key type='Certificates'><id field='name' value='Certificate Store'/><key type='Certificate'><id field='dname' value='CN=Change this for production'/></key></key>	</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="name"><value>Create an Open ID Connect ID Token</value></fval>
-	<fval name="signatureAlg"><value>RS256</value></fval>
-	<fval name="subject"><value>${authentication.subject.id}</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AccessCodeGrantFilter" entityPK="-3937207554661967190" parentPK="-44312847007585936">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="accessTokenExpiresInSecs"><value>3600</value></fval>
-	<fval name="accessTokenType"><value>Bearer</value></fval>
-	<fval name="accessTokenlength"><value>54</value></fval>
-	<fval name="authzCodeCache"><value contentType="reference">
-<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AuthzCodeStoreGroup'><id field='name' value='Authorization Code Stores'/><key type='AuthzCodePersist'><id field='name' value='Authz Code Store'/></key></key></key>	</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="clientAttributeName"><value>authentication.application.id</value></fval>
-	<fval name="clientIdHeaderName"><value>client_id</value></fval>
-	<fval name="clientSecretHeaderName"><value>client_secret</value></fval>
-	<fval name="compositeContext"><value>0</value></fval>
-	<fval name="locationOfClientDetails"><value>AuthorizationHeader</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="metricsMask"><value>1</value></fval>
-	<fval name="name"><value>Exchange AuthZ Code for Access Token</value></fval>
-	<fval name="recordOutboundTxns"><value>true</value></fval>
-	<fval name="refreshChoice"><value>NewRefresh</value></fval>
-	<fval name="refreshTokenExpiresInSecs"><value>43200</value></fval>
-	<fval name="refreshTokenlength"><value>46</value></fval>
-	<fval name="scopeChoice"><value>Application</value></fval>
-	<fval name="scopesForToken"><value>${scopes.for.token}</value></fval>
-	<fval name="scopesMustMatch"><value>Any</value></fval>
-	<fval name="serviceName"><value></value></fval>
-	<fval name="successNode"><value contentType="reference">-3145974470338607525</value></fval>
-	<fval name="tokenStore"><value contentType="reference">
-<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AccessTokenStoreGroup'><id field='name' value='Access Token Stores'/><key type='AccessTokenPersist'><id field='name' value='OAuth Access Token Store'/></key></key></key>	</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-1980906115471255590" parentPK="-8487908141546621523">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Resource Owner Password Credentials</value></fval>
-	<fval name="start"><value contentType="reference">6542599015443759757</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ResourceOwnerPasswordCredentialsFilter" entityPK="6542599015443759757" parentPK="-1980906115471255590">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="accessTokenExpiresInSecs"><value>3600</value></fval>
-	<fval name="accessTokenType"><value>Bearer</value></fval>
-	<fval name="accessTokenlength"><value>54</value></fval>
-	<fval name="authNWith"><value>REPOSITORY</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
-	<fval name="clientAttributeName"><value>authentication.application.id</value></fval>
-	<fval name="clientIdHeaderName"><value>client_id</value></fval>
-	<fval name="clientSecretHeaderName"><value>client_secret</value></fval>
-	<fval name="compositeContext"><value>0</value></fval>
-	<fval name="locationOfClientDetails"><value>AuthorizationHeader</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="metricsMask"><value>1</value></fval>
-	<fval name="name"><value>Resource Owner Password Credentials</value></fval>
-	<fval name="recordOutboundTxns"><value>1</value></fval>
-	<fval name="refreshChoice"><value>NewRefresh</value></fval>
-	<fval name="refreshTokenExpiresInSecs"><value>43200</value></fval>
-	<fval name="refreshTokenlength"><value>46</value></fval>
-	<fval name="repository"><value contentType="reference">
-<key type='AuthnRepositoryGroup'><id field='name' value='Authentication Repositories'/><key type='AuthnRepositoryLocalGroup'><id field='name' value='Local Repositories'/><key type='AuthnRepositoryLocal'><id field='name' value='Local User Store'/></key></key></key>	</value></fval>
-	<fval name="scopeChoice"><value>Application</value></fval>
-	<fval name="scopeCircuitPK"><value contentType="reference">-1</value></fval>
-	<fval name="scopesForToken"><value>${scopes.for.token}</value></fval>
-	<fval name="scopesMustMatch"><value>Any</value></fval>
-	<fval name="serviceName"><value></value></fval>
-	<fval name="subjectAttr"><value>${authentication.subject.id}</value></fval>
-	<fval name="tokenStore"><value contentType="reference">
-<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AccessTokenStoreGroup'><id field='name' value='Access Token Stores'/><key type='AccessTokenPersist'><id field='name' value='OAuth Access Token Store'/></key></key></key>	</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="8959719758197052155" parentPK="-8487908141546621523">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Access Token Service</value></fval>
-	<fval name="start"><value contentType="reference">-719541048898881410</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchFilter" entityPK="-719541048898881410" parentPK="8959719758197052155">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeName"><value>${content.body.getParameters().get(&quot;grant_type&quot;)}</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="defaultCircuit"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='Policy Library'/><key type='FilterCircuit'><id field='name' value='Return HTTP Error 401: Unauthorized'/></key></key>	</value></fval>
-	<fval name="defaultOption"><value>RETURN_DEFAULT_CIRCUIT</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="name"><value>Decide what grant type to use</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="4891458931828889312" parentPK="-719541048898881410">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='OAuth 2.0'/><key type='CircuitContainer'><id field='name' value='Access Token Service'/><key type='FilterCircuit'><id field='name' value='Refresh'/></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>refresh_token</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001340660962253-0000000023c88300-1</value></fval>
-	<fval name="priority"><value>1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="-5579285430436509320" parentPK="-719541048898881410">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='_Client Credentials'/></key></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>client_credentials</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001340660962253-0000000023c88300-3</value></fval>
-	<fval name="priority"><value>1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="7337473420543948065" parentPK="-719541048898881410">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='OAuth 2.0'/><key type='CircuitContainer'><id field='name' value='Access Token Service'/><key type='FilterCircuit'><id field='name' value='SAML'/></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>urn:ietf:params:oauth:grant-type:saml2-bearer</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001386691053525-000000003910f87e-1</value></fval>
-	<fval name="priority"><value>5</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="2640455472110427771" parentPK="-719541048898881410">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='OAuth 2.0'/><key type='CircuitContainer'><id field='name' value='Access Token Service'/><key type='FilterCircuit'><id field='name' value='JWT'/></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>urn:ietf:params:oauth:grant-type:jwt-bearer</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001340660819595-0000000038480ba3-1</value></fval>
-	<fval name="priority"><value>0</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="273342404468570128" parentPK="-719541048898881410">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='OAuth 2.0'/><key type='CircuitContainer'><id field='name' value='Access Token Service'/><key type='FilterCircuit'><id field='name' value='Resource Owner Password Credentials'/></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>password</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001340660962253-0000000023c88300-4</value></fval>
-	<fval name="priority"><value>1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SwitchCircuitReference" entityPK="-3378973865339141470" parentPK="-719541048898881410">
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='OAuth 2.0'/><key type='CircuitContainer'><id field='name' value='Access Token Service'/><key type='FilterCircuit'><id field='name' value='Access Code'/></key></key></key>	</value></fval>
-	<fval name="comparatorType"><value>is</value></fval>
-	<fval name="compareWith"><value>authorization_code</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>Id-0001340660962253-0000000023c88300-2</value></fval>
-	<fval name="priority"><value>1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-7444614419707762655" parentPK="-8487908141546621523">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>_Client Credentials</value></fval>
-	<fval name="start"><value contentType="reference">-2087628371939928787</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ClientCredentialsFilter" entityPK="-2087628371939928787" parentPK="-7444614419707762655">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="accessTokenExpiresInSecs"><value>3600</value></fval>
-	<fval name="accessTokenType"><value>Bearer</value></fval>
-	<fval name="accessTokenlength"><value>54</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="clientAttributeName"><value>authentication.subject.id</value></fval>
-	<fval name="clientIdHeaderName"><value>client_id</value></fval>
-	<fval name="clientSecretHeaderName"><value>client_secret</value></fval>
-	<fval name="compositeContext"><value>0</value></fval>
-	<fval name="locationOfClientDetails"><value>AuthorizationHeader</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="metricsMask"><value>1</value></fval>
-	<fval name="name"><value>Access Token using Client Credentials</value></fval>
-	<fval name="recordOutboundTxns"><value>true</value></fval>
-	<fval name="refreshChoice"><value>NoRefresh</value></fval>
-	<fval name="refreshTokenExpiresInSecs"><value>43200</value></fval>
-	<fval name="refreshTokenlength"><value>46</value></fval>
-	<fval name="scopeChoice"><value>Application</value></fval>
-	<fval name="scopeCircuitPK"><value contentType="reference">-1</value></fval>
-	<fval name="scopesForToken"><value>${scopes.for.token}</value></fval>
-	<fval name="scopesMustMatch"><value>Any</value></fval>
-	<fval name="serviceName"><value></value></fval>
-	<fval name="successNode"><value contentType="reference">-1</value></fval>
-	<fval name="tokenStore"><value contentType="reference">
-<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AccessTokenStoreGroup'><id field='name' value='Access Token Stores'/><key type='AccessTokenPersist'><id field='name' value='OAuth Access Token Store'/></key></key></key>	</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AccessLogger" entityPK="3555736635682881796" parentPK="0">
+	<fval name="name"><value>AccessLogger</value></fval>
+	<fval name="pattern"><value>%h %l %u %t &quot;%r&quot; %s %b</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AccessLoggerFile" entityPK="-3403282376840848546" parentPK="3555736635682881796">
+	<fval name="baseLogFileName"><value>access</value></fval>
+	<fval name="directoryName"><value>logs/access</value></fval>
+	<fval name="enabled"><value>false</value></fval>
+	<fval name="format"><value>${level} ${timestamp} ${id} &apos;${text}&apos; ${filterType} ${filterName}</value></fval>
+	<fval name="logFileNameExtension"><value>.log</value></fval>
+	<fval name="maxFiles"><value>20</value></fval>
+	<fval name="maxLogFileSize"><value>1000</value></fval>
+	<fval name="name"><value>AccessLoggerFileDetails</value></fval>
+	<fval name="rollOverDaily"><value>true</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="NamespacesConfiguration" entityPK="9031254178363187148" parentPK="0">
 	<fval name="name"><value>Namespace Configuration</value></fval>
@@ -8094,17 +7229,17 @@
 	<fval name="logSuccess"><value>En-tête HTTP supprimé du message avec succès</value></fval>
 	<fval name="type"><value>RemoveHTTPHeaderFilter</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-2760020328367683568" parentPK="-4632685241611969049">
-	<fval name="logFailure"><value>Antivirus McAfee : Virus trouvé dans le message</value></fval>
-	<fval name="logFatal"><value>Une erreur s&apos;est produite lors du filtrage antivirus McAfee. Erreur : ${circuit.exception}</value></fval>
-	<fval name="logSuccess"><value>Antivirus McAfee : aucun virus dans le message</value></fval>
-	<fval name="type"><value>McAfeeVirusCheck</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="1788460760174020840" parentPK="-4632685241611969049">
 	<fval name="logFailure"><value>Echec du filtre de service Web</value></fval>
 	<fval name="logFatal"><value>Erreur d&apos;exécution du filtre de service Web. Erreur : ${circuit.exception}</value></fval>
 	<fval name="logSuccess"><value>Filtre de service Web réussi</value></fval>
 	<fval name="type"><value>WSFilter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-2760020328367683568" parentPK="-4632685241611969049">
+	<fval name="logFailure"><value>Antivirus McAfee : Virus trouvé dans le message</value></fval>
+	<fval name="logFatal"><value>Une erreur s&apos;est produite lors du filtrage antivirus McAfee. Erreur : ${circuit.exception}</value></fval>
+	<fval name="logSuccess"><value>Antivirus McAfee : aucun virus dans le message</value></fval>
+	<fval name="type"><value>McAfeeVirusCheck</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="1611962666939078864" parentPK="-4632685241611969049">
 	<fval name="logFailure"><value>Echec de l&apos;envoi de la demande au point de fin ${http.destination.protocol}://${http.destination.host}:${http.destination.port}${http.request.uri}</value></fval>
@@ -8132,17 +7267,17 @@
 	<fval name="logSuccess"><value>Nœud XML supprimé avec succès du message</value></fval>
 	<fval name="type"><value>RemoveXMLNodeFilter</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="1577744792593442085" parentPK="-4632685241611969049">
-	<fval name="logFailure"><value>Echec d&apos;extraction de l&apos;horodatage</value></fval>
-	<fval name="logFatal"><value>Erreur fatale lors de l&apos;extraction de l&apos;horodatage. Erreur : ${circuit.exception}</value></fval>
-	<fval name="logSuccess"><value>Horodatage extrait avec succès</value></fval>
-	<fval name="type"><value>ExtractTimestampFilter</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-139260549890712742" parentPK="-4632685241611969049">
 	<fval name="logFailure"><value>Echec de l&apos;insertion de pièce-jointe MTOM dans le message</value></fval>
 	<fval name="logFatal"><value>Erreur lors de l&apos;insertion de pièce-jointe MTOM dans le message. Erreur : ${circuit.exception}</value></fval>
 	<fval name="logSuccess"><value>Pièce-jointe MTOM insérée avec succès dans le message</value></fval>
 	<fval name="type"><value>InsertMTOMAttachmentInMessageFilter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="1577744792593442085" parentPK="-4632685241611969049">
+	<fval name="logFailure"><value>Echec d&apos;extraction de l&apos;horodatage</value></fval>
+	<fval name="logFatal"><value>Erreur fatale lors de l&apos;extraction de l&apos;horodatage. Erreur : ${circuit.exception}</value></fval>
+	<fval name="logSuccess"><value>Horodatage extrait avec succès</value></fval>
+	<fval name="type"><value>ExtractTimestampFilter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-980002628165092975" parentPK="-4632685241611969049">
 	<fval name="logFailure"><value>La demande a échoué le filtrage des pièces-jointes</value></fval>
@@ -9136,20 +8271,19 @@
 	<fval name="clientIdHeaderName"><value>client_id</value></fval>
 	<fval name="clientSecretHeaderName"><value>client_secret</value></fval>
 	<fval name="compositeContext"><value>0</value></fval>
-	<fval name="locationOfClientDetails"><value>AuthorizationHeader</value></fval>
+	<fval name="locationOfClientDetails"><value>QueryString</value></fval>
 	<fval name="logFailure"><value>Filter failed</value></fval>
 	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
 	<fval name="logMask"><value>2</value></fval>
 	<fval name="logMaskType"><value>SERVICE</value></fval>
 	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="metricsMask"><value>1</value></fval>
+	<fval name="metricsMask"><value>3</value></fval>
 	<fval name="name"><value>Access Token using client credentials</value></fval>
 	<fval name="recordOutboundTxns"><value>true</value></fval>
 	<fval name="refreshChoice"><value>NoRefresh</value></fval>
 	<fval name="refreshTokenExpiresInSecs"><value>43200</value></fval>
 	<fval name="refreshTokenlength"><value>46</value></fval>
 	<fval name="scopeChoice"><value>Application</value></fval>
-	<fval name="scopeCircuitPK"><value contentType="reference">-1</value></fval>
 	<fval name="scopesForToken"><value>${scopes.for.token}</value></fval>
 	<fval name="scopesMustMatch"><value>Any</value></fval>
 	<fval name="serviceName"><value></value></fval>
@@ -11728,6 +10862,89 @@
 	<fval name="overwriteExistingHeader"><value>1</value></fval>
 	<fval name="successNode"><value contentType="reference">5553396733046200732</value></fval>
 </entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="1472678597745623902" parentPK="-1772278547972404596">
+	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
+	<fval name="description"><value></value></fval>
+	<fval name="logMask"><value>3</value></fval>
+	<fval name="name"><value>Is Logged In</value></fval>
+	<fval name="start"><value contentType="reference">970953176934565360</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RemoveHTTPHeaderFilter" entityPK="5277309234072453463" parentPK="1472678597745623902">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="errorNoHeader"><value>0</value></fval>
+	<fval name="headerName"><value>Cookie</value></fval>
+	<fval name="logFailure"><value>Failed in removing the HTTP header from the message</value></fval>
+	<fval name="logFatal"><value>Error in removing the HTTP header from the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in removing the HTTP header from the message</value></fval>
+	<fval name="name"><value>Remove Cookie Header-2</value></fval>
+	<fval name="successNode"><value contentType="reference">8028153811183720740</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RemoveHTTPHeaderFilter" entityPK="-4841446895353670900" parentPK="1472678597745623902">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="errorNoHeader"><value>0</value></fval>
+	<fval name="failureNode"><value contentType="reference">-1</value></fval>
+	<fval name="headerName"><value>Cookie</value></fval>
+	<fval name="logFailure"><value>Failed in removing the HTTP header from the message</value></fval>
+	<fval name="logFatal"><value>Error in removing the HTTP header from the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in removing the HTTP header from the message</value></fval>
+	<fval name="name"><value>Remove Cookie Header</value></fval>
+	<fval name="successNode"><value contentType="reference">-446750315969374555</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FalseFilter" entityPK="-446750315969374555" parentPK="1472678597745623902">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>False filter error. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value></value></fval>
+	<fval name="name"><value>False Filter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="IsCachedAttributeFilter" entityPK="567440269299120709" parentPK="1472678597745623902">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeName"><value>content.body</value></fval>
+	<fval name="cacheToUse"><value contentType="reference">
+<key type='CacheManager'><id field='name' value='Cache Manager'/><key type='Cache'><id field='name' value='HTTP Sessions'/></key></key>	</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="failureNode"><value contentType="reference">-4841446895353670900</value></fval>
+	<fval name="keyAttributeName"><value>authentication.subject.id</value></fval>
+	<fval name="logFailure"><value>Failure while looking for key in the message attribute cache.</value></fval>
+	<fval name="logFatal"><value>Error while looking for key in the  message attribiute cache. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Found the key in the message attribute cache.</value></fval>
+	<fval name="name"><value>If auth sub id in session represents user</value></fval>
+	<fval name="successNode"><value contentType="reference">5277309234072453463</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CheckSessionFilter" entityPK="970953176934565360" parentPK="1472678597745623902">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">7811574526778513791</value></fval>
+	<fval name="cookie"><value>CLIENTCOOKIE</value></fval>
+	<fval name="failureNode"><value contentType="reference">-4841446895353670900</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>Check Session</value></fval>
+	<fval name="successNode"><value contentType="reference">567440269299120709</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TrueFilter" entityPK="8028153811183720740" parentPK="1472678597745623902">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value></value></fval>
+	<fval name="logFatal"><value>True filter error. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>True filter passed</value></fval>
+	<fval name="name"><value>True Filter</value></fval>
+</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-6034443131024205044" parentPK="-1772278547972404596">
 	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
 	<fval name="description"><value></value></fval>
@@ -11827,89 +11044,6 @@
 	<fval name="name"><value>Expires Header</value></fval>
 	<fval name="overwriteExistingHeader"><value>1</value></fval>
 	<fval name="successNode"><value contentType="reference">8699509274425652187</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="1472678597745623902" parentPK="-1772278547972404596">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Is Logged In</value></fval>
-	<fval name="start"><value contentType="reference">970953176934565360</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RemoveHTTPHeaderFilter" entityPK="5277309234072453463" parentPK="1472678597745623902">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="errorNoHeader"><value>0</value></fval>
-	<fval name="headerName"><value>Cookie</value></fval>
-	<fval name="logFailure"><value>Failed in removing the HTTP header from the message</value></fval>
-	<fval name="logFatal"><value>Error in removing the HTTP header from the message. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in removing the HTTP header from the message</value></fval>
-	<fval name="name"><value>Remove Cookie Header-2</value></fval>
-	<fval name="successNode"><value contentType="reference">8028153811183720740</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RemoveHTTPHeaderFilter" entityPK="-4841446895353670900" parentPK="1472678597745623902">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="errorNoHeader"><value>0</value></fval>
-	<fval name="failureNode"><value contentType="reference">-1</value></fval>
-	<fval name="headerName"><value>Cookie</value></fval>
-	<fval name="logFailure"><value>Failed in removing the HTTP header from the message</value></fval>
-	<fval name="logFatal"><value>Error in removing the HTTP header from the message. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Success in removing the HTTP header from the message</value></fval>
-	<fval name="name"><value>Remove Cookie Header</value></fval>
-	<fval name="successNode"><value contentType="reference">-446750315969374555</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FalseFilter" entityPK="-446750315969374555" parentPK="1472678597745623902">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>False filter error. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value></value></fval>
-	<fval name="name"><value>False Filter</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="IsCachedAttributeFilter" entityPK="567440269299120709" parentPK="1472678597745623902">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeName"><value>content.body</value></fval>
-	<fval name="cacheToUse"><value contentType="reference">
-<key type='CacheManager'><id field='name' value='Cache Manager'/><key type='Cache'><id field='name' value='HTTP Sessions'/></key></key>	</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="failureNode"><value contentType="reference">-4841446895353670900</value></fval>
-	<fval name="keyAttributeName"><value>authentication.subject.id</value></fval>
-	<fval name="logFailure"><value>Failure while looking for key in the message attribute cache.</value></fval>
-	<fval name="logFatal"><value>Error while looking for key in the  message attribiute cache. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Found the key in the message attribute cache.</value></fval>
-	<fval name="name"><value>If auth sub id in session represents user</value></fval>
-	<fval name="successNode"><value contentType="reference">5277309234072453463</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CheckSessionFilter" entityPK="970953176934565360" parentPK="1472678597745623902">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">7811574526778513791</value></fval>
-	<fval name="cookie"><value>CLIENTCOOKIE</value></fval>
-	<fval name="failureNode"><value contentType="reference">-4841446895353670900</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="name"><value>Check Session</value></fval>
-	<fval name="successNode"><value contentType="reference">567440269299120709</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TrueFilter" entityPK="8028153811183720740" parentPK="1472678597745623902">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="logFailure"><value></value></fval>
-	<fval name="logFatal"><value>True filter error. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>True filter passed</value></fval>
-	<fval name="name"><value>True Filter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="3281026607577500192" parentPK="-1772278547972404596">
 	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
@@ -14071,7 +13205,7 @@
 	<fval name="type"><value>Governance</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="1188054912873539382" parentPK="0">
-	<fval name="name"><value>01-DO</value></fval>
+	<fval name="name"><value>SNAP TOKEN</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="6400400242044876488" parentPK="1188054912873539382">
 	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
@@ -14344,6 +13478,690 @@
 	<fval name="expression"><value>$.accountSource.inquiry</value></fval>
 	<fval name="failOnError"><value>0</value></fval>
 	<fval name="unmarshalType"><value>java.lang.Boolean</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-8981187578895166365" parentPK="1188054912873539382">
+	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
+	<fval name="description"><value></value></fval>
+	<fval name="logMask"><value>3</value></fval>
+	<fval name="name"><value>01-Access Token Service Snap BI-BSB</value></fval>
+	<fval name="start"><value contentType="reference">2411424628345622339</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONPathFilter" entityPK="-6701608995968667491" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>JSON Path</value></fval>
+	<fval name="successNode"><value contentType="reference">4329251957981799880</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONPath" entityPK="4747129267732906410" parentPK="-6701608995968667491">
+	<fval name="attributeName"><value>grant_type</value></fval>
+	<fval name="expression"><value>$.grant_type</value></fval>
+	<fval name="failOnError"><value>0</value></fval>
+	<fval name="unmarshalType"><value>java.lang.String</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CreateRESTRequestFilter" entityPK="4329251957981799880" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="httpMethod"><value>POST</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>Create REST Request</value></fval>
+	<fval name="successNode"><value contentType="reference">-1912611004410188423</value></fval>
+	<fval name="useAttributeLookupList"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-2756079801366103936" parentPK="4329251957981799880">
+	<fval name="name"><value>client_id</value></fval>
+	<fval name="value"><value>${bsbApiKey}</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-9179901476256538528" parentPK="4329251957981799880">
+	<fval name="name"><value>client_secret</value></fval>
+	<fval name="value"><value>${bsbApiSecret}</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-5675723721876724931" parentPK="4329251957981799880">
+	<fval name="name"><value>grant_type</value></fval>
+	<fval name="value"><value>${grant_type}</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ClientCredentialsFilter" entityPK="-1912611004410188423" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="accessTokenExpiresInSecs"><value>900</value></fval>
+	<fval name="accessTokenType"><value>Bearer</value></fval>
+	<fval name="accessTokenlength"><value>54</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="clientAttributeName"><value>authentication.application.id</value></fval>
+	<fval name="clientIdHeaderName"><value>client_id</value></fval>
+	<fval name="clientSecretHeaderName"><value>client_secret</value></fval>
+	<fval name="compositeContext"><value>0</value></fval>
+	<fval name="locationOfClientDetails"><value>QueryString</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="metricsMask"><value>1</value></fval>
+	<fval name="name"><value>Access Token using Client Credentials</value></fval>
+	<fval name="recordOutboundTxns"><value>true</value></fval>
+	<fval name="refreshChoice"><value>NoRefresh</value></fval>
+	<fval name="refreshTokenExpiresInSecs"><value>43200</value></fval>
+	<fval name="refreshTokenlength"><value>46</value></fval>
+	<fval name="scopeChoice"><value>Application</value></fval>
+	<fval name="scopeCircuitPK"><value contentType="reference">-1</value></fval>
+	<fval name="scopesForToken"><value>${scopes.for.token}</value></fval>
+	<fval name="scopesMustMatch"><value>Any</value></fval>
+	<fval name="serviceName"><value></value></fval>
+	<fval name="successNode"><value contentType="reference">5923704508685745190</value></fval>
+	<fval name="tokenStore"><value contentType="reference">
+<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AccessTokenStoreGroup'><id field='name' value='Access Token Stores'/><key type='AccessTokenPersist'><id field='name' value='OAuth Access Token Store'/></key></key></key>	</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TraceFilter" entityPK="1143476610538414188" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="doIndent"><value>1</value></fval>
+	<fval name="logFailure"><value>Failed to trace the message properties</value></fval>
+	<fval name="logFatal"><value>Error while tracing the message properties. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Traced the message properties</value></fval>
+	<fval name="name"><value>Debug Data</value></fval>
+	<fval name="successNode"><value contentType="reference">-1</value></fval>
+	<fval name="traceAttributes"><value>1</value></fval>
+	<fval name="traceBody"><value>1</value></fval>
+	<fval name="traceLevel"><value>5</value></fval>
+	<fval name="traceMsg"><value>debug</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeExtractHTTPHeaderFilter" entityPK="2411424628345622339" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeName"><value>bsbApiKey</value></fval>
+	<fval name="base64Decode"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">1663884985096739532</value></fval>
+	<fval name="failureNode"><value contentType="reference">-6611494039524845580</value></fval>
+	<fval name="headerName"><value>X-CLIENT-KEY</value></fval>
+	<fval name="logFailure"><value>Failed to extract attribute HTTP header</value></fval>
+	<fval name="logFatal"><value>Error occurred while extracting attributes from HTTP header. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Extracted attribute from HTTP header</value></fval>
+	<fval name="name"><value>Retrieve from HTTP header Client Key</value></fval>
+	<fval name="successNode"><value contentType="reference">-3534074015169939139</value></fval>
+	<fval name="useQueryParameter"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeExtractHTTPHeaderFilter" entityPK="-3534074015169939139" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeName"><value>xtimestamp</value></fval>
+	<fval name="base64Decode"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">1663884985096739532</value></fval>
+	<fval name="failureNode"><value contentType="reference">1130000437102464057</value></fval>
+	<fval name="headerName"><value>X-TIMESTAMP</value></fval>
+	<fval name="logFailure"><value>Failed to extract attribute HTTP header</value></fval>
+	<fval name="logFatal"><value>Error occurred while extracting attributes from HTTP header. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Extracted attribute from HTTP header</value></fval>
+	<fval name="name"><value>Retrieve from HTTP header XTIMESTAMP</value></fval>
+	<fval name="successNode"><value contentType="reference">-6109726490531639100</value></fval>
+	<fval name="useQueryParameter"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="-6109726490531639100" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeValue"><value>${kps.PortalOAuthStore[bsbApiKey].secret}</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
+	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Set the attribute value</value></fval>
+	<fval name="messageAttribute"><value>bsbApiSecret</value></fval>
+	<fval name="name"><value>Set Attribute Client Secret Key</value></fval>
+	<fval name="successNode"><value contentType="reference">8828261720248004037</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AuthenticateAPIKeyFilter" entityPK="8828261720248004037" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="apiKeyAuthorizationFormatClass"><value>com.vordel.circuit.apikeys.AWSS3AuthZHeader</value></fval>
+	<fval name="apiKeyHTTPLocation"><value>HEADER</value></fval>
+	<fval name="apiKeyName"><value>X-CLIENT-KEY</value></fval>
+	<fval name="apiKeySelector"><value>${http.client.getCgiArgument(&quot;apiKey&quot;)}</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="expiresFormat"><value></value></fval>
+	<fval name="expiresLocation"><value>QUERYSTRING</value></fval>
+	<fval name="expiresLocationName"><value>Expires</value></fval>
+	<fval name="expiresType"><value>MILLISECONDS_SINCE_EPOC</value></fval>
+	<fval name="expiresWiggleRoom"><value>60000</value></fval>
+	<fval name="extractSecret"><value>1</value></fval>
+	<fval name="failureNode"><value contentType="reference">-6611494039524845580</value></fval>
+	<fval name="kpsAlias"><value>PortalOAuthStore</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>Authenticate Header X-CLIENT-KEY</value></fval>
+	<fval name="performAuthentication"><value>1</value></fval>
+	<fval name="secretAuthorizationFormatClass"><value>com.vordel.circuit.apikeys.HTTPBasicAuthZHeader</value></fval>
+	<fval name="secretHTTPLocation"><value>QUERYSTRING</value></fval>
+	<fval name="secretKPSFieldName"><value>secret</value></fval>
+	<fval name="secretLocation"><value>SELECTOR</value></fval>
+	<fval name="secretLocationName"><value>apiSecret</value></fval>
+	<fval name="secretProcessorClass"><value>com.vordel.circuit.apikeys.AuthenticateS3RequestAuthZHeader</value></fval>
+	<fval name="secretSelector"><value>${bsbApiSecret}</value></fval>
+	<fval name="successNode"><value contentType="reference">4644481630342660419</value></fval>
+	<fval name="timeStampFormat"><value>EEE, dd MMM yyyy HH:mm:ss zzz</value></fval>
+	<fval name="timeStampLocation"><value>HEADER</value></fval>
+	<fval name="timeStampLocationName"><value>Date</value></fval>
+	<fval name="timeStampType"><value>DATE_FORMAT</value></fval>
+	<fval name="timeStampWiggleRoom"><value>60000</value></fval>
+	<fval name="validateExpires"><value>0</value></fval>
+	<fval name="validateTimeStamp"><value>0</value></fval>
+	<fval name="whereToLookForAPIKey"><value>HTTP_VALUES</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ValidateTimeStampFilter" entityPK="4644481630342660419" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="driftTime"><value>600000</value></fval>
+	<fval name="failureNode"><value contentType="reference">1130000437102464057</value></fval>
+	<fval name="logFailure"><value>Invalid timestamp found in message</value></fval>
+	<fval name="logFatal"><value>Error during validation of timestamp. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Timestamp is valid</value></fval>
+	<fval name="name"><value>Validate Timestamp</value></fval>
+	<fval name="successNode"><value contentType="reference">5439564298650614656</value></fval>
+	<fval name="timeFormat"><value>yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;+&apos;07:00</value></fval>
+	<fval name="timestampAttributeName"><value>${xtimestamp}</value></fval>
+	<fval name="timestampCheckType"><value>2</value></fval>
+	<fval name="timezone"><value>Asia/Jakarta</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ValidateTimeStampFilter" entityPK="5439564298650614656" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="driftTime"><value>60000</value></fval>
+	<fval name="failureNode"><value contentType="reference">1130000437102464057</value></fval>
+	<fval name="logFailure"><value>Invalid timestamp found in message</value></fval>
+	<fval name="logFatal"><value>Error during validation of timestamp. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Timestamp is valid</value></fval>
+	<fval name="name"><value>Validate Timestamp 2</value></fval>
+	<fval name="successNode"><value contentType="reference">2797748670522126089</value></fval>
+	<fval name="timeFormat"><value>yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;+&apos;07:00</value></fval>
+	<fval name="timestampAttributeName"><value>${xtimestamp}</value></fval>
+	<fval name="timestampCheckType"><value>1</value></fval>
+	<fval name="timezone"><value>Asia/Jakarta</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="-6611494039524845580" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeValue"><value>X-CLIENT-KEY</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
+	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Set the attribute value</value></fval>
+	<fval name="messageAttribute"><value>fieldname</value></fval>
+	<fval name="name"><value>Set Attribute X-CLIENT-KEY</value></fval>
+	<fval name="successNode"><value contentType="reference">-7710420130551276670</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="1130000437102464057" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeValue"><value>X-TIMESTAMP</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
+	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Set the attribute value</value></fval>
+	<fval name="messageAttribute"><value>fieldname</value></fval>
+	<fval name="name"><value>Set Attribute X-TIMESTAMP</value></fval>
+	<fval name="successNode"><value contentType="reference">-7710420130551276670</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="2797748670522126089" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeValue"><value>${kps.PortalOAuthStore[bsbApiKey].enabled}</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
+	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Set the attribute value</value></fval>
+	<fval name="messageAttribute"><value>oauth.enable</value></fval>
+	<fval name="name"><value>Set Attribute OAuth Enable</value></fval>
+	<fval name="successNode"><value contentType="reference">-4329253700867561748</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="-4329253700867561748" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeValue"><value>${kps.PortalOAuthStore[authentication.subject.id].cert}</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
+	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Set the attribute value</value></fval>
+	<fval name="messageAttribute"><value>public.key</value></fval>
+	<fval name="name"><value>Set Attribute Public Key</value></fval>
+	<fval name="successNode"><value contentType="reference">3779071402519937898</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CompareAttributeFilter" entityPK="3779071402519937898" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="failureNode"><value contentType="reference">-2535886853663007556</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="matchingRule"><value>MATCH_ALL</value></fval>
+	<fval name="name"><value>Dev Only &apos;Bypass Signature&apos;</value></fval>
+	<fval name="negateOpOnNull"><value>0</value></fval>
+	<fval name="successNode"><value contentType="reference">-6701608995968667491</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeCompare" entityPK="8470446795123093748" parentPK="3779071402519937898">
+	<fval name="attrName"><value>${apikey.enable}</value></fval>
+	<fval name="expression"><value>false</value></fval>
+	<fval name="matchType"><value>IS</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeCompare" entityPK="-4601618292743562161" parentPK="3779071402519937898">
+	<fval name="attrName"><value>${http.headers.Host}</value></fval>
+	<fval name="expression"><value>8080</value></fval>
+	<fval name="matchType"><value>CONTAINS</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JavaScriptFilter" entityPK="-2535886853663007556" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="consumedProperties"></fval>
+	<fval name="engineName"><value>groovy</value></fval>
+	<fval name="generatedProperties"></fval>
+	<fval name="logFailure"><value>Failed script filter</value></fval>
+	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Passed script filter</value></fval>
+	<fval name="name"><value>Signature Validation</value></fval>
+	<fval name="requiredProperties"></fval>
+	<fval name="script"><value>import java.util.ArrayList&#xD;&#xA;import java.lang.String&#xD;&#xA;import javax.crypto.*&#xD;&#xA;import java.security.*&#xD;&#xA;import java.security.spec.*&#xD;&#xA;import javax.crypto.Mac&#xD;&#xA;import javax.crypto.spec.SecretKeySpec&#xD;&#xA;import static java.nio.charset.StandardCharsets.UTF_8&#xD;&#xA;import com.vordel.trace.Trace&#xD;&#xA;&#xD;&#xA;def invoke(msg){ &#xD;&#xA;&#x9;def apikey = msg.get(&quot;bsbApiKey&quot;)&#xD;&#xA;&#x9;String publicKeyRaw = msg.get(&quot;public.key&quot;)&#xD;&#xA;&#x9;byte[] publicKeyGetBytes = publicKeyRaw.getBytes(UTF_8)&#xD;&#xA;&#xD;&#xA;&#x9;def timestampheader = msg.get(&quot;http.headers&quot;).get(&quot;X-TIMESTAMP&quot;)&#xD;&#xA;&#x9;def signatureheader = msg.get(&quot;http.headers&quot;).get(&quot;X-SIGNATURE&quot;)&#xD;&#xA;&#x9;byte[] signatureDecoded = signatureheader.decodeBase64()&#xD;&#xA;&#xD;&#xA;&#x9;def data = apikey+&apos;|&apos;+timestampheader&#xD;&#xA;&#x9;byte[] messageBytes = data.getBytes(UTF_8)&#xD;&#xA;&#xD;&#xA;&#x9;KeyFactory keyFactory = KeyFactory.getInstance(&quot;RSA&quot;)&#xD;&#xA;&#x9;EncodedKeySpec keySpec = new X509EncodedKeySpec(publicKeyGetBytes)&#xD;&#xA;&#x9;PublicKey pubKey = keyFactory.generatePublic(keySpec)&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;Signature signature = Signature.getInstance(&quot;SHA256withRSA&quot;)&#xD;&#xA;&#x9;signature.initVerify(pubKey)&#xD;&#xA;&#x9;signature.update(messageBytes)&#xD;&#xA;&#x9;boolean isCorrect = signature.verify(signatureDecoded)&#xD;&#xA;&#x9;if(isCorrect) {&#xD;&#xA;&#x9;&#x9;msg.put(&quot;signatureValidated&quot;,&quot;true&quot;)&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;msg.put(&quot;signatureValidated&quot;,&quot;false&quot;)&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return true&#xD;&#xA;}</value></fval>
+	<fval name="successNode"><value contentType="reference">2388498233464781630</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="6874681452094933965" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeValue"><value>X-SIGNATURE</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
+	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Set the attribute value</value></fval>
+	<fval name="messageAttribute"><value>fieldname</value></fval>
+	<fval name="name"><value>Set Attribute X-SIGNATURE</value></fval>
+	<fval name="successNode"><value contentType="reference">-7710420130551276670</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CompareAttributeFilter" entityPK="2388498233464781630" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="failureNode"><value contentType="reference">6874681452094933965</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="matchingRule"><value>MATCH_ALL</value></fval>
+	<fval name="name"><value>Compare Attribute</value></fval>
+	<fval name="negateOpOnNull"><value>0</value></fval>
+	<fval name="successNode"><value contentType="reference">-6701608995968667491</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeCompare" entityPK="3998341147873797413" parentPK="2388498233464781630">
+	<fval name="attrName"><value>${oauth.enable}</value></fval>
+	<fval name="expression"><value>true</value></fval>
+	<fval name="matchType"><value>IS</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AttributeCompare" entityPK="873982471502435991" parentPK="2388498233464781630">
+	<fval name="attrName"><value>${signatureValidated}</value></fval>
+	<fval name="expression"><value>true</value></fval>
+	<fval name="matchType"><value>IS</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="-7710420130551276670" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="circuitPK"><value contentType="reference">
+<key type='CircuitContainer'><id field='name' value='SNAP TOKEN'/><key type='FilterCircuit'><id field='name' value='01-Response Header'/></key></key>	</value></fval>
+	<fval name="logFailure"><value>Failed in calling policy shortcut</value></fval>
+	<fval name="logFatal"><value>Error in calling policy shortcut circuit. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in calling policy shortcut</value></fval>
+	<fval name="name"><value>Call Response Header</value></fval>
+	<fval name="successNode"><value contentType="reference">-9029088914598382288</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ChangeMessageFilter" entityPK="-9029088914598382288" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="body"><value>{&#xD;&#xA;    &quot;responseCode&quot;: &quot;4000002&quot;,&#xD;&#xA;    &quot;responseMessage&quot;: &quot;Invalid Mandatory Field ${fieldname}&quot;,&#xD;&#xA;}</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Failed in setting the message</value></fval>
+	<fval name="logFatal"><value>Error in setting the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in setting the message</value></fval>
+	<fval name="name"><value>Message Invalid Mandatory</value></fval>
+	<fval name="outputContentType"><value>application/json</value></fval>
+	<fval name="successNode"><value contentType="reference">9062915838607541271</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Reflector" entityPK="9062915838607541271" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="httpResponseStatus"><value>400</value></fval>
+	<fval name="logFailure"><value>Failed to echo back the message</value></fval>
+	<fval name="logFatal"><value>Error occurred while echoing the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Successfully echoed back the message</value></fval>
+	<fval name="name"><value>Reflect Message 400</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="5923704508685745190" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="circuitPK"><value contentType="reference">
+<key type='CircuitContainer'><id field='name' value='SNAP TOKEN'/><key type='FilterCircuit'><id field='name' value='01-Timestamp'/></key></key>	</value></fval>
+	<fval name="logFailure"><value>Failed in calling policy shortcut</value></fval>
+	<fval name="logFatal"><value>Error in calling policy shortcut circuit. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in calling policy shortcut</value></fval>
+	<fval name="name"><value>Call Timestamp</value></fval>
+	<fval name="successNode"><value contentType="reference">3436456858122330954</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AddHTTPHeaderFilter" entityPK="3436456858122330954" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="addWhere"><value>httpheaders</value></fval>
+	<fval name="base64Encode"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="headerName"><value>X-TIMESTAMP</value></fval>
+	<fval name="headerValue"><value>${input.timestamp}</value></fval>
+	<fval name="logFailure"><value>Failed in adding the HTTP header to the message</value></fval>
+	<fval name="logFatal"><value>Error in adding the HTTP header to the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in adding the HTTP header to the message</value></fval>
+	<fval name="name"><value>Add HTTP Header</value></fval>
+	<fval name="overwriteExistingHeader"><value>1</value></fval>
+	<fval name="successNode"><value contentType="reference">-4667891611228553847</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RemoveHTTPHeaderFilter" entityPK="-4667891611228553847" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="errorNoHeader"><value>0</value></fval>
+	<fval name="headerName"><value>X-SIGNATURE</value></fval>
+	<fval name="logFailure"><value>Failed in removing the HTTP header from the message</value></fval>
+	<fval name="logFatal"><value>Error in removing the HTTP header from the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in removing the HTTP header from the message</value></fval>
+	<fval name="name"><value>Remove HTTP Header</value></fval>
+	<fval name="successNode"><value contentType="reference">3717444220549567571</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONAddNodeFilter" entityPK="3717444220549567571" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="content"><value>&quot;2000000&quot;</value></fval>
+	<fval name="expression"><value>$</value></fval>
+	<fval name="expressionType"><value>0</value></fval>
+	<fval name="insertLocationType"><value>1</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>JSON Add ResponseCode</value></fval>
+	<fval name="objectFieldName"><value>responseCode</value></fval>
+	<fval name="successNode"><value contentType="reference">2024586856583826191</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONAddNodeFilter" entityPK="2024586856583826191" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="content"><value>&quot;Successful&quot;</value></fval>
+	<fval name="expression"><value>$</value></fval>
+	<fval name="expressionType"><value>0</value></fval>
+	<fval name="insertLocationType"><value>1</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>JSON Add ResponseMessage</value></fval>
+	<fval name="objectFieldName"><value>responseMessage</value></fval>
+	<fval name="successNode"><value contentType="reference">7676635833844963331</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONAddNodeFilter" entityPK="7676635833844963331" parentPK="-8981187578895166365">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="content"><value>{&#xD;&#xA;}</value></fval>
+	<fval name="expression"><value>$</value></fval>
+	<fval name="expressionType"><value>0</value></fval>
+	<fval name="insertLocationType"><value>1</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>JSON Add additionalInfo</value></fval>
+	<fval name="objectFieldName"><value>additionalInfo</value></fval>
+	<fval name="successNode"><value contentType="reference">1143476610538414188</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-8471021145195216454" parentPK="1188054912873539382">
+	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
+	<fval name="description"><value></value></fval>
+	<fval name="logMask"><value>3</value></fval>
+	<fval name="name"><value>01-Access Token Service Snap Test</value></fval>
+	<fval name="start"><value contentType="reference">-7451328101891471779</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ExtractRESTAttributesFilter" entityPK="-7451328101891471779" parentPK="-8471021145195216454">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">1663884985096739532</value></fval>
+	<fval name="decode"><value>0</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>Extract REST Request Attributes</value></fval>
+	<fval name="queryAttributePrefix"><value>params.query</value></fval>
+	<fval name="successNode"><value contentType="reference">1647422667310766949</value></fval>
+	<fval name="useHeaders"><value>1</value></fval>
+	<fval name="useQueryString"><value>1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONPathFilter" entityPK="1647422667310766949" parentPK="-8471021145195216454">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>JSON Path</value></fval>
+	<fval name="successNode"><value contentType="reference">-783350448448813440</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONPath" entityPK="287418428584307663" parentPK="1647422667310766949">
+	<fval name="attributeName"><value>client_id</value></fval>
+	<fval name="expression"><value>$.additionalInfo.clientId</value></fval>
+	<fval name="failOnError"><value>0</value></fval>
+	<fval name="unmarshalType"><value>java.lang.String</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONPath" entityPK="3050887199192828987" parentPK="1647422667310766949">
+	<fval name="attributeName"><value>client_secret</value></fval>
+	<fval name="expression"><value>$.additionalInfo.clientSecret</value></fval>
+	<fval name="failOnError"><value>0</value></fval>
+	<fval name="unmarshalType"><value>java.lang.String</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JSONPath" entityPK="-7074213390556914381" parentPK="1647422667310766949">
+	<fval name="attributeName"><value>grant_type</value></fval>
+	<fval name="expression"><value>$.grantType</value></fval>
+	<fval name="failOnError"><value>0</value></fval>
+	<fval name="unmarshalType"><value>java.lang.String</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CreateRESTRequestFilter" entityPK="-783350448448813440" parentPK="-8471021145195216454">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="httpMethod"><value>POST</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="name"><value>Create REST Request</value></fval>
+	<fval name="successNode"><value contentType="reference">1272853378253472883</value></fval>
+	<fval name="useAttributeLookupList"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-2968123134269280897" parentPK="-783350448448813440">
+	<fval name="name"><value>client_id</value></fval>
+	<fval name="value"><value>${client_id}</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="8818506713090253261" parentPK="-783350448448813440">
+	<fval name="name"><value>client_secret</value></fval>
+	<fval name="value"><value>${client_secret}</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-7780620950302665691" parentPK="-783350448448813440">
+	<fval name="name"><value>grant_type</value></fval>
+	<fval name="value"><value>${grant_type}</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ClientCredentialsFilter" entityPK="1272853378253472883" parentPK="-8471021145195216454">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="accessTokenExpiresInSecs"><value>3600</value></fval>
+	<fval name="accessTokenType"><value>Bearer</value></fval>
+	<fval name="accessTokenlength"><value>54</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="clientAttributeName"><value>authentication.application.id</value></fval>
+	<fval name="clientIdHeaderName"><value>client_id</value></fval>
+	<fval name="clientSecretHeaderName"><value>client_secret</value></fval>
+	<fval name="compositeContext"><value>0</value></fval>
+	<fval name="locationOfClientDetails"><value>QueryString</value></fval>
+	<fval name="logFailure"><value>Filter failed</value></fval>
+	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Filter passed</value></fval>
+	<fval name="metricsMask"><value>1</value></fval>
+	<fval name="name"><value>Access Token using Client Credentials</value></fval>
+	<fval name="recordOutboundTxns"><value>true</value></fval>
+	<fval name="refreshChoice"><value>NoRefresh</value></fval>
+	<fval name="refreshTokenExpiresInSecs"><value>43200</value></fval>
+	<fval name="refreshTokenlength"><value>46</value></fval>
+	<fval name="scopeChoice"><value>Application</value></fval>
+	<fval name="scopeCircuitPK"><value contentType="reference">-1</value></fval>
+	<fval name="scopesForToken"><value>${scopes.for.token}</value></fval>
+	<fval name="scopesMustMatch"><value>Any</value></fval>
+	<fval name="serviceName"><value></value></fval>
+	<fval name="successNode"><value contentType="reference">7304371585628928955</value></fval>
+	<fval name="tokenStore"><value contentType="reference">
+<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AccessTokenStoreGroup'><id field='name' value='Access Token Stores'/><key type='AccessTokenPersist'><id field='name' value='OAuth Access Token Store'/></key></key></key>	</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="TraceFilter" entityPK="7304371585628928955" parentPK="-8471021145195216454">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="doIndent"><value>1</value></fval>
+	<fval name="logFailure"><value>Failed to trace the message properties</value></fval>
+	<fval name="logFatal"><value>Error while tracing the message properties. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Traced the message properties</value></fval>
+	<fval name="name"><value>Debug Data</value></fval>
+	<fval name="traceAttributes"><value>1</value></fval>
+	<fval name="traceBody"><value>1</value></fval>
+	<fval name="traceLevel"><value>5</value></fval>
+	<fval name="traceMsg"><value>debug</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-1043928462354652025" parentPK="1188054912873539382">
+	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
+	<fval name="description"><value></value></fval>
+	<fval name="logMask"><value>3</value></fval>
+	<fval name="name"><value>01-Response Header</value></fval>
+	<fval name="start"><value contentType="reference">6760593866296850431</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="RemoveHTTPHeaderFilter" entityPK="6760593866296850431" parentPK="-1043928462354652025">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="errorNoHeader"><value>0</value></fval>
+	<fval name="headerName"><value>X-SIGNATURE</value></fval>
+	<fval name="logFailure"><value>Failed in removing the HTTP header from the message</value></fval>
+	<fval name="logFatal"><value>Error in removing the HTTP header from the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in removing the HTTP header from the message</value></fval>
+	<fval name="name"><value>Remove HTTP Header X-SIGNATURE</value></fval>
+	<fval name="successNode"><value contentType="reference">3413149672031341948</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="3413149672031341948" parentPK="-1043928462354652025">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="circuitPK"><value contentType="reference">
+<key type='CircuitContainer'><id field='name' value='SNAP TOKEN'/><key type='FilterCircuit'><id field='name' value='01-Timestamp Response Header'/></key></key>	</value></fval>
+	<fval name="logFailure"><value>Failed in calling policy shortcut</value></fval>
+	<fval name="logFatal"><value>Error in calling policy shortcut circuit. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in calling policy shortcut</value></fval>
+	<fval name="name"><value>Call Timestamp</value></fval>
+	<fval name="successNode"><value contentType="reference">-4042880712902177750</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AddHTTPHeaderFilter" entityPK="-4042880712902177750" parentPK="-1043928462354652025">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="addWhere"><value>httpheaders</value></fval>
+	<fval name="base64Encode"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="headerName"><value>X-TIMESTAMP</value></fval>
+	<fval name="headerValue"><value>${input.timestamp}</value></fval>
+	<fval name="logFailure"><value>Failed in adding the HTTP header to the message</value></fval>
+	<fval name="logFatal"><value>Error in adding the HTTP header to the message. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Success in adding the HTTP header to the message</value></fval>
+	<fval name="name"><value>Add HTTP Header</value></fval>
+	<fval name="overwriteExistingHeader"><value>1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="5904592414332238736" parentPK="1188054912873539382">
+	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
+	<fval name="description"><value></value></fval>
+	<fval name="logMask"><value>3</value></fval>
+	<fval name="name"><value>01-Timestamp Response Header</value></fval>
+	<fval name="start"><value contentType="reference">-5282148278552534480</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JavaScriptFilter" entityPK="-5282148278552534480" parentPK="5904592414332238736">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="consumedProperties"></fval>
+	<fval name="engineName"><value>groovy</value></fval>
+	<fval name="generatedProperties"></fval>
+	<fval name="logFailure"><value>Failed script filter</value></fval>
+	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Passed script filter</value></fval>
+	<fval name="name"><value>Scripting Language</value></fval>
+	<fval name="requiredProperties"></fval>
+	<fval name="script"><value>def invoke(msg)         {&#xD;&#xA;&#x9;def date = new Date();&#xD;&#xA;&#x9;def dtFormat = &quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&apos;+07:00&apos;&quot;;&#xD;&#xA;&#x9;def date1 =date.format(dtFormat, TimeZone.getTimeZone(&apos;GMT+7&apos;));&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;def dtFormat2 = &quot;yyyyMM&quot;;&#xD;&#xA;&#x9;def date2 =date.format(dtFormat2, TimeZone.getTimeZone(&apos;GMT+7&apos;));&#xD;&#xA;&#xD;&#xA;&#x9;def dtFormat3 = &quot;yyyyMMddHHmmssSSS&quot;;&#xD;&#xA;&#x9;def date3 =date.format(dtFormat3, TimeZone.getTimeZone(&apos;GMT+7&apos;));&#xD;&#xA;&#xD;&#xA;&#x9;msg.put(&quot;input.timestamp&quot;,date1);&#xD;&#xA;&#x9;msg.put(&quot;short.timestamp&quot;,date2);&#xD;&#xA;&#x9;msg.put(&quot;datastatic.timestamp&quot;,date3);&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;return true;         &#xD;&#xA;}</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="2619860762941685301" parentPK="1188054912873539382">
+	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
+	<fval name="description"><value></value></fval>
+	<fval name="logMask"><value>3</value></fval>
+	<fval name="name"><value>01-Timestamp</value></fval>
+	<fval name="start"><value contentType="reference">-3253761565130640241</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="JavaScriptFilter" entityPK="-3253761565130640241" parentPK="2619860762941685301">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="consumedProperties"></fval>
+	<fval name="engineName"><value>groovy</value></fval>
+	<fval name="generatedProperties"></fval>
+	<fval name="logFailure"><value>Failed script filter</value></fval>
+	<fval name="logFatal"><value>Error while attempt to run script filter. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Passed script filter</value></fval>
+	<fval name="name"><value>Scripting Language</value></fval>
+	<fval name="requiredProperties"></fval>
+	<fval name="script"><value>def invoke(msg)         {&#xD;&#xA;&#x9;def date = new Date();&#xD;&#xA;&#x9;def dtFormat = &quot;yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSS&apos;+07:00&apos;&quot;;&#xD;&#xA;&#x9;def date1=date.format(dtFormat, TimeZone.getTimeZone(&apos;GMT+7&apos;));&#xD;&#xA;&#x9;msg.put(&quot;input.timestamp&quot;,date1);&#xD;&#xA;&#x9;return true;         &#xD;&#xA;}</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="NetService" entityPK="-1493857832511977486" parentPK="0">
 	<fval name="name"><value>Service</value></fval>
@@ -15531,17 +15349,17 @@
 	<fval name="logSuccess"><value>Descifrado XML aprobado</value></fval>
 	<fval name="type"><value>XMLDecryptionFilter</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="3526730517510506771" parentPK="-4985427293590408888">
-	<fval name="logFailure"><value>Error de autorización del filtro SiteMinder</value></fval>
-	<fval name="logFatal"><value>Se ha producido un error durante la autorización de SiteMinder. Error: ${circuit.exception}</value></fval>
-	<fval name="logSuccess"><value>Se ha aprobado la autorización del filtro SiteMinder</value></fval>
-	<fval name="type"><value>AuthzSiteMinderFilter</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-7370137925187528361" parentPK="-4985427293590408888">
 	<fval name="logFailure"><value>Error al resolver el mensaje mediante acción SOAP</value></fval>
 	<fval name="logFatal"><value>Error al intentar resolver mediante acción SOAP. Error: ${circuit.exception}</value></fval>
 	<fval name="logSuccess"><value>Mensaje resuelto mediante acción SOAP relativa</value></fval>
 	<fval name="type"><value>SOAPActionResolver</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="3526730517510506771" parentPK="-4985427293590408888">
+	<fval name="logFailure"><value>Error de autorización del filtro SiteMinder</value></fval>
+	<fval name="logFatal"><value>Se ha producido un error durante la autorización de SiteMinder. Error: ${circuit.exception}</value></fval>
+	<fval name="logSuccess"><value>Se ha aprobado la autorización del filtro SiteMinder</value></fval>
+	<fval name="type"><value>AuthzSiteMinderFilter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-6339699167528777671" parentPK="-4985427293590408888">
 	<fval name="logFailure"><value>Error de autenticación HTTP Digest</value></fval>
@@ -15579,17 +15397,17 @@
 	<fval name="logSuccess"><value>Los accesos directos de política se han activado correctamente</value></fval>
 	<fval name="type"><value>CircuitChainFilter</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="5478667656451977803" parentPK="-4985427293590408888">
-	<fval name="logFailure"><value>Error al extraer los atributos de LDAP</value></fval>
-	<fval name="logFatal"><value>Se ha producido un error al extraer los atributos de LDAP. Error: ${circuit.exception}</value></fval>
-	<fval name="logSuccess"><value>Se han extraído los atributos de LDAP</value></fval>
-	<fval name="type"><value>AttributeExtractLdapFilter</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="6211298260884934312" parentPK="-4985427293590408888">
 	<fval name="logFailure"><value>Error al obtener las funciones de Oracle Entitlements Server.</value></fval>
 	<fval name="logFatal"><value>Error al obtener las funciones de Oracle Entitlements Server. Error: ${circuit.exception}</value></fval>
 	<fval name="logSuccess"><value>Se han obtenido las funciones de Oracle Entitlements Server.</value></fval>
 	<fval name="type"><value>OESGetRolesFilter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="5478667656451977803" parentPK="-4985427293590408888">
+	<fval name="logFailure"><value>Error al extraer los atributos de LDAP</value></fval>
+	<fval name="logFatal"><value>Se ha producido un error al extraer los atributos de LDAP. Error: ${circuit.exception}</value></fval>
+	<fval name="logSuccess"><value>Se han extraído los atributos de LDAP</value></fval>
+	<fval name="type"><value>AttributeExtractLdapFilter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-2566138147364491502" parentPK="-4985427293590408888">
 	<fval name="logFailure"><value>Error de validación de esquema</value></fval>
@@ -16724,17 +16542,17 @@
 	<fval name="logSuccess"><value>Attributo estratto dall&apos;intestazione HTTP</value></fval>
 	<fval name="type"><value>AttributeExtractHTTPHeaderFilter</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-8679065907614738843" parentPK="-7993329476010077496">
-	<fval name="logFailure"><value>Impostazione messaggio non riuscita</value></fval>
-	<fval name="logFatal"><value>Errore impostazione messaggio. Errore: ${circuit.exception}</value></fval>
-	<fval name="logSuccess"><value>Impostazione messaggio eseguita con successo</value></fval>
-	<fval name="type"><value>ChangeMessageFilter</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-3508783574779880657" parentPK="-7993329476010077496">
 	<fval name="logFailure"><value>Individuazione asserzione autenticazione SAML non riuscita</value></fval>
 	<fval name="logFatal"><value>Errore durante l&apos;individuazione asserzione autenticazione SAML. Errore: ${circuit.exception}</value></fval>
 	<fval name="logSuccess"><value>Asserzione autenticazione SAML individuata per ${attribute.subject.id}</value></fval>
 	<fval name="type"><value>SamlAuthNExtractFilter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-8679065907614738843" parentPK="-7993329476010077496">
+	<fval name="logFailure"><value>Impostazione messaggio non riuscita</value></fval>
+	<fval name="logFatal"><value>Errore impostazione messaggio. Errore: ${circuit.exception}</value></fval>
+	<fval name="logSuccess"><value>Impostazione messaggio eseguita con successo</value></fval>
+	<fval name="type"><value>ChangeMessageFilter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="2750777353831337966" parentPK="-7993329476010077496">
 	<fval name="logFailure"><value>Autenticazione mediante attributi nomeutente-password non riuscita.</value></fval>
@@ -16777,42 +16595,6 @@
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="-8210016104410589517" parentPK="-2922342962084042254">
 	<fval name="name"><value>REST API&apos;s</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="4094087742705342405" parentPK="-8210016104410589517">
-	<fval name="name"><value>Get Token B2B</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-5705857472936607416" parentPK="4094087742705342405">
-	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
-	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>Access Token Request</value></fval>
-	<fval name="start"><value contentType="reference">-7613662305258778641</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ServiceContextFilter" entityPK="-7613662305258778641" parentPK="-5705857472936607416">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="clientAttributeName"><value>authentication.subject.id</value></fval>
-	<fval name="compositeContext"><value>0</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="metricsMask"><value>1</value></fval>
-	<fval name="name"><value>Set service context</value></fval>
-	<fval name="serviceName"><value>${api.name}</value></fval>
-	<fval name="successNode"><value contentType="reference">2515480246051285565</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="2515480246051285565" parentPK="-5705857472936607416">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='Access Token B2B'/></key></key></key></key>	</value></fval>
-	<fval name="logFailure"><value>Filter failed</value></fval>
-	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Filter passed</value></fval>
-	<fval name="name"><value>Routing</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="7975056016833324973" parentPK="-8210016104410589517">
 	<fval name="name"><value>Templates</value></fval>
@@ -17246,16 +17028,16 @@
 	<fval name="maxNumberFiles"><value>500</value></fval>
 	<fval name="name"><value>Persistence Details</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="-6591169144563856307" parentPK="-8210016104410589517">
-	<fval name="name"><value>Get Token</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitContainer" entityPK="-2223260176579907304" parentPK="-8210016104410589517">
+	<fval name="name"><value>SNAP TOKEN BI</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="-5942318254384699635" parentPK="-6591169144563856307">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="FilterCircuit" entityPK="1526899185604066584" parentPK="-2223260176579907304">
 	<fval name="category"><value contentType="reference">-1801262153827358455</value></fval>
 	<fval name="logMask"><value>3</value></fval>
-	<fval name="name"><value>get token</value></fval>
-	<fval name="start"><value contentType="reference">5030598134939165224</value></fval>
+	<fval name="name"><value>Access Token Snap BI</value></fval>
+	<fval name="start"><value contentType="reference">3773301862302073279</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ServiceContextFilter" entityPK="5030598134939165224" parentPK="-5942318254384699635">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="ServiceContextFilter" entityPK="3773301862302073279" parentPK="1526899185604066584">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
 	<fval name="clientAttributeName"><value>authentication.subject.id</value></fval>
@@ -17268,13 +17050,13 @@
 	<fval name="metricsMask"><value>1</value></fval>
 	<fval name="name"><value>Set service context</value></fval>
 	<fval name="serviceName"><value>${api.name}</value></fval>
-	<fval name="successNode"><value contentType="reference">4003958837742969748</value></fval>
+	<fval name="successNode"><value contentType="reference">-7787813728400555954</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="4003958837742969748" parentPK="-5942318254384699635">
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CircuitDelegateFilter" entityPK="-7787813728400555954" parentPK="1526899185604066584">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
 	<fval name="circuitPK"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='BSB-SNAP'/><key type='CircuitContainer'><id field='name' value='SNAP Token B2B'/><key type='CircuitContainer'><id field='name' value='v1'/><key type='FilterCircuit'><id field='name' value='Access Token Service'/></key></key></key></key>	</value></fval>
+<key type='CircuitContainer'><id field='name' value='SNAP TOKEN'/><key type='FilterCircuit'><id field='name' value='01-Access Token Service Snap BI-BSB'/></key></key>	</value></fval>
 	<fval name="logFailure"><value>Filter failed</value></fval>
 	<fval name="logFatal"><value>Filter aborted due to exception</value></fval>
 	<fval name="logMask"><value>2</value></fval>
@@ -19809,19 +19591,6 @@
 	<fval name="name"><value>Set extidentity.role</value></fval>
 	<fval name="successNode"><value contentType="reference">-6547949300165355519</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="-6547949300165355519" parentPK="5195274437667709107">
-	<fval name="abortProcessingOnLogError"><value>0</value></fval>
-	<fval name="attributeValue"><value>1</value></fval>
-	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
-	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
-	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="logMaskType"><value>SERVICE</value></fval>
-	<fval name="logSuccess"><value>Set the attribute value</value></fval>
-	<fval name="messageAttribute"><value>extidentity.enabled</value></fval>
-	<fval name="name"><value>Set extidentity.enabled</value></fval>
-	<fval name="successNode"><value contentType="reference">2526531574745308543</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="-8521010614005853419" parentPK="5195274437667709107">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
 	<fval name="attributeValue"><value>${user[0].description[0]}</value></fval>
@@ -19834,6 +19603,19 @@
 	<fval name="messageAttribute"><value>extidentity.description</value></fval>
 	<fval name="name"><value>Set extidentity.description</value></fval>
 	<fval name="successNode"><value contentType="reference">1892757036145772499</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="-6547949300165355519" parentPK="5195274437667709107">
+	<fval name="abortProcessingOnLogError"><value>0</value></fval>
+	<fval name="attributeValue"><value>1</value></fval>
+	<fval name="category"><value contentType="reference">-7994452553092409974</value></fval>
+	<fval name="logFailure"><value>Failed to set the attribute value</value></fval>
+	<fval name="logFatal"><value>Error while setting the attribute value. Error: ${circuit.exception}</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="logMaskType"><value>SERVICE</value></fval>
+	<fval name="logSuccess"><value>Set the attribute value</value></fval>
+	<fval name="messageAttribute"><value>extidentity.enabled</value></fval>
+	<fval name="name"><value>Set extidentity.enabled</value></fval>
+	<fval name="successNode"><value contentType="reference">2526531574745308543</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SetAttributeFilter" entityPK="2526531574745308543" parentPK="5195274437667709107">
 	<fval name="abortProcessingOnLogError"><value>0</value></fval>
@@ -22786,17 +22568,17 @@
 	<fval name="logSuccess"><value>Einfügen der SAML-Autorisierungsassertion erfolgreich</value></fval>
 	<fval name="type"><value>SamlAuthZInsertFilter</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-7594727811262442552" parentPK="156152299970441352">
-	<fval name="logFailure"><value>Lesen der WS-Adressierungsinformationen fehlgeschlagen</value></fval>
-	<fval name="logFatal"><value>Fehler beim Lesen der WS-Adressierungsinformationen. Fehler: ${circuit.exception}</value></fval>
-	<fval name="logSuccess"><value>Lesen der WS-Adressierungsinformationen erfolgreich</value></fval>
-	<fval name="type"><value>ReadWSAddressingFilter</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="5607555987997407458" parentPK="156152299970441352">
 	<fval name="logFailure"><value>Festlegen der XML-Verschlüsselungseigenschaften fehlgeschlagen</value></fval>
 	<fval name="logFatal"><value>Beim Festlegen der XML-Verschlüsselung ist ein Fehler aufgetreten. Fehler: ${circuit.exception}</value></fval>
 	<fval name="logSuccess"><value>Festlegen der XML-Verschlüsselungseigenschaften erfolgreich</value></fval>
 	<fval name="type"><value>SetEncryptionPropertiesFilter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-7594727811262442552" parentPK="156152299970441352">
+	<fval name="logFailure"><value>Lesen der WS-Adressierungsinformationen fehlgeschlagen</value></fval>
+	<fval name="logFatal"><value>Fehler beim Lesen der WS-Adressierungsinformationen. Fehler: ${circuit.exception}</value></fval>
+	<fval name="logSuccess"><value>Lesen der WS-Adressierungsinformationen erfolgreich</value></fval>
+	<fval name="type"><value>ReadWSAddressingFilter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-1615646938679513994" parentPK="156152299970441352">
 	<fval name="logFailure"><value>CRL-Responder fehlgeschlagen</value></fval>
@@ -23044,17 +22826,17 @@
 	<fval name="logSuccess"><value>True-Filter erfolgreich</value></fval>
 	<fval name="type"><value>TrueFilter</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-5323816883619903958" parentPK="156152299970441352">
-	<fval name="logFailure"><value>Fehler bei Aufrufen in der Richtlinienverknüpfungskette</value></fval>
-	<fval name="logFatal"><value>Fehler beim Verarbeiten der Richtlinienverknüpfungen. Fehler: ${circuit.exception}</value></fval>
-	<fval name="logSuccess"><value>Erfolgreiches Aufrufen aller Richtlinienverknüpfungen</value></fval>
-	<fval name="type"><value>CircuitChainFilter</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="1777533598768843095" parentPK="156152299970441352">
 	<fval name="logFailure"><value>Entfernen des Attributs fehlgeschlagen</value></fval>
 	<fval name="logFatal"><value>Fehler beim Entfernen des Attributs. Fehler: ${circuit.exception}</value></fval>
 	<fval name="logSuccess"><value>Attribut wurde entfernt.</value></fval>
 	<fval name="type"><value>RemoveAttributeFilter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-5323816883619903958" parentPK="156152299970441352">
+	<fval name="logFailure"><value>Fehler bei Aufrufen in der Richtlinienverknüpfungskette</value></fval>
+	<fval name="logFatal"><value>Fehler beim Verarbeiten der Richtlinienverknüpfungen. Fehler: ${circuit.exception}</value></fval>
+	<fval name="logSuccess"><value>Erfolgreiches Aufrufen aller Richtlinienverknüpfungen</value></fval>
+	<fval name="type"><value>CircuitChainFilter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="4847595067926585747" parentPK="156152299970441352">
 	<fval name="logFailure"><value>Fehler beim Kopieren der Attribute</value></fval>
@@ -23062,17 +22844,17 @@
 	<fval name="logSuccess"><value>Attribute wurden erfolgreich kopiert.</value></fval>
 	<fval name="type"><value>CopyAttributeFilter</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-4273800365663624065" parentPK="156152299970441352">
-	<fval name="logFailure"><value>CRL-Überprüfung für Zertifikat fehlgeschlagen</value></fval>
-	<fval name="logFatal"><value>Fehler bei der CRL-Überprüfung des Zertifikats. Fehler: ${circuit.exception}</value></fval>
-	<fval name="logSuccess"><value>CRL-Überprüfung für Zertifikat erfolgreich</value></fval>
-	<fval name="type"><value>CertValidationCrlFileFilter</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-4898278878251115497" parentPK="156152299970441352">
 	<fval name="logFailure"><value>IP-Adressfilterung für ${http.request.clientaddr} fehlgeschlagen</value></fval>
 	<fval name="logFatal"><value>Bei der IP-Adressfilterung ist ein Fehler aufgetreten. Fehler: ${circuit.exception}</value></fval>
 	<fval name="logSuccess"><value>IP-Adressfilterung für ${http.request.clientaddr} erfolgreich</value></fval>
 	<fval name="type"><value>IpFilter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-4273800365663624065" parentPK="156152299970441352">
+	<fval name="logFailure"><value>CRL-Überprüfung für Zertifikat fehlgeschlagen</value></fval>
+	<fval name="logFatal"><value>Fehler bei der CRL-Überprüfung des Zertifikats. Fehler: ${circuit.exception}</value></fval>
+	<fval name="logSuccess"><value>CRL-Überprüfung für Zertifikat erfolgreich</value></fval>
+	<fval name="type"><value>CertValidationCrlFileFilter</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="2042055326312751112" parentPK="156152299970441352">
 	<fval name="logFailure"><value>Fehler beim Verarbeiten einer WS-Trust-Nachricht</value></fval>
@@ -23270,15 +23052,15 @@
 	<fval name="logSuccess"><value>Autorisierung für SiteMinder-Filter erfolgreich</value></fval>
 	<fval name="type"><value>AuthzSiteMinderFilter</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationCategory" entityPK="-2716902796692309405" parentPK="156152299970441352">
-	<fval name="category"><value contentType="reference">9115459882038954682</value></fval>
-	<fval name="displayName"><value>Integration</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="-5211081526638046979" parentPK="156152299970441352">
 	<fval name="logFailure"><value>Nachricht konnte nicht an das Messaging System gesendet werden.</value></fval>
 	<fval name="logFatal"><value>Fehler beim Weiterleiten der Nachricht an das Messaging System. Fehler: ${circuit.exception}</value></fval>
 	<fval name="logSuccess"><value>Nachricht wurde erfolgreich an das Messaging System gesendet.</value></fval>
 	<fval name="type"><value>JMSFilter</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationCategory" entityPK="-2716902796692309405" parentPK="156152299970441352">
+	<fval name="category"><value contentType="reference">9115459882038954682</value></fval>
+	<fval name="displayName"><value>Integration</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="InternationalizationFilter" entityPK="3295155107418659927" parentPK="156152299970441352">
 	<fval name="logFailure"><value>Filterung der Nachrichtengröße fehlgeschlagen</value></fval>
@@ -23835,13 +23617,13 @@
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>0</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="6923918146141837537" parentPK="-4604210043099864467">
-	<fval name="name"><value>ScrapObjectHandling</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="-144850873730727301" parentPK="-4604210043099864467">
+	<fval name="name"><value>Emulation</value></fval>
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="-144850873730727301" parentPK="-4604210043099864467">
-	<fval name="name"><value>Emulation</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="6923918146141837537" parentPK="-4604210043099864467">
+	<fval name="name"><value>ScrapObjectHandling</value></fval>
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
 </entity>
@@ -24050,13 +23832,13 @@
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="4036944293284537149" parentPK="-4604210043099864467">
-	<fval name="name"><value>ExecFileDisinfection</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="-5237446820688650403" parentPK="-4604210043099864467">
+	<fval name="name"><value>Office2001Handling</value></fval>
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="-5237446820688650403" parentPK="-4604210043099864467">
-	<fval name="name"><value>Office2001Handling</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="4036944293284537149" parentPK="-4604210043099864467">
+	<fval name="name"><value>ExecFileDisinfection</value></fval>
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
 </entity>
@@ -24250,13 +24032,13 @@
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>0</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="7736770663686454343" parentPK="-4604210043099864467">
-	<fval name="name"><value>AppleSingle</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="-93033266348712015" parentPK="-4604210043099864467">
+	<fval name="name"><value>PeEmulator</value></fval>
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="-93033266348712015" parentPK="-4604210043099864467">
-	<fval name="name"><value>PeEmulator</value></fval>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="7736770663686454343" parentPK="-4604210043099864467">
+	<fval name="name"><value>AppleSingle</value></fval>
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
 </entity>
@@ -24280,15 +24062,15 @@
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="-1319123871884044240" parentPK="-4604210043099864467">
-	<fval name="name"><value>AllowPartialVirusData</value></fval>
-	<fval name="type"><value>3</value></fval>
-	<fval name="value"><value>0</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="4537950664043419054" parentPK="-4604210043099864467">
 	<fval name="name"><value>CleanPng</value></fval>
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="-1319123871884044240" parentPK="-4604210043099864467">
+	<fval name="name"><value>AllowPartialVirusData</value></fval>
+	<fval name="type"><value>3</value></fval>
+	<fval name="value"><value>0</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="-58535048582739854" parentPK="-4604210043099864467">
 	<fval name="name"><value>Vba5Dir</value></fval>
@@ -24458,15 +24240,15 @@
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="66987550099122132" parentPK="7522717467098256990">
-	<fval name="name"><value>GrpSuper</value></fval>
-	<fval name="type"><value>9</value></fval>
-	<fval name="value"><value>2</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="-1726659028114114016" parentPK="7522717467098256990">
 	<fval name="name"><value>Rpm</value></fval>
 	<fval name="type"><value>3</value></fval>
 	<fval name="value"><value>1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="66987550099122132" parentPK="7522717467098256990">
+	<fval name="name"><value>GrpSuper</value></fval>
+	<fval name="type"><value>9</value></fval>
+	<fval name="value"><value>2</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SophosNameValue" entityPK="1476425040847873600" parentPK="7522717467098256990">
 	<fval name="name"><value>VirusDataName</value></fval>
@@ -26378,17 +26160,17 @@
 	<fval name="type"><value>java.lang.String</value></fval>
 	<fval name="value"><value></value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="KPSTypeProperty" entityPK="3714754023638559765" parentPK="-2051997639227838997">
-	<fval name="key"><value></value></fval>
-	<fval name="name"><value>createdBy</value></fval>
-	<fval name="type"><value>java.lang.String</value></fval>
-	<fval name="value"><value></value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="KPSTypeProperty" entityPK="2097605976204534430" parentPK="-2051997639227838997">
 	<fval name="key"><value>java.lang.String</value></fval>
 	<fval name="name"><value>tags</value></fval>
 	<fval name="type"><value>java.util.Map</value></fval>
 	<fval name="value"><value>java.lang.String</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="KPSTypeProperty" entityPK="3714754023638559765" parentPK="-2051997639227838997">
+	<fval name="key"><value></value></fval>
+	<fval name="name"><value>createdBy</value></fval>
+	<fval name="type"><value>java.lang.String</value></fval>
+	<fval name="value"><value></value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="KPSTypeProperty" entityPK="-238801070185758184" parentPK="-2051997639227838997">
 	<fval name="key"><value></value></fval>

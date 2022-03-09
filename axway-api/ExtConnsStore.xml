@@ -1700,17 +1700,6 @@
 	<fval name="type"><value>3</value></fval>
 	<fval name="writeConsistencyLevel"><value>QUORUM</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="AccessTokenPersist" entityPK="70785105691758669" parentPK="4897783530525142419">
-	<fval name="cache"><value contentType="reference">-1</value></fval>
-	<fval name="database"><value contentType="reference">-1</value></fval>
-	<fval name="digestAlgorithm"><value>SHA-256</value></fval>
-	<fval name="name"><value>SNAP Oauth Access Token Store</value></fval>
-	<fval name="purge"><value>60</value></fval>
-	<fval name="purgeBatchSize"><value>1000</value></fval>
-	<fval name="readConsistencyLevel"><value>ONE</value></fval>
-	<fval name="type"><value>3</value></fval>
-	<fval name="writeConsistencyLevel"><value>ONE</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PassPortClientCache" entityPK="6861239255847491248" parentPK="0">
 	<fval name="name"><value>PassPort Client Cache</value></fval>
 </entity>

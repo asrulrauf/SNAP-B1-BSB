@@ -1202,81 +1202,6 @@
 	<fval name="trafficMonitoringEnabled"><value>true</value></fval>
 	<fval name="uriprefix"><value>/</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIBroker" entityPK="4210927793444075866" parentPK="-3743904628680973144">
-	<fval name="apiVersion"><value>1.0</value></fval>
-	<fval name="corsProfile"><value contentType="reference">-1</value></fval>
-	<fval name="corsUsage"><value xsi:nil="true"></value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="descriptionLocation"><value>INTERNAL</value></fval>
-	<fval name="destination"><value xsi:nil="true"></value></fval>
-	<fval name="enableAccessLogging"><value>0</value></fval>
-	<fval name="enabled"><value>1</value></fval>
-	<fval name="evaluate"><value>1</value></fval>
-	<fval name="httpMethod"><value>*</value></fval>
-	<fval name="id"><value>63261ce1-ca1d-4c82-9e3f-c4472426aa6d</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="markdownFile"><value></value></fval>
-	<fval name="name"><value>Get Token</value></fval>
-	<fval name="pathMatching"><value>LONGEST</value></fval>
-	<fval name="payloadMask"><value>0</value></fval>
-	<fval name="routingType"><value>CUSTOM</value></fval>
-	<fval name="summary"><value>Oauth</value></fval>
-	<fval name="trafficMonitoringEnabled"><value>true</value></fval>
-	<fval name="uriprefix"><value>/api</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethod" entityPK="7384572441962470168" parentPK="4210927793444075866">
-	<fval name="blockUnspecifiedParams"><value>true</value></fval>
-	<fval name="checkSourceContentType"><value>false</value></fval>
-	<fval name="copyContentType"><value>INBOUND</value></fval>
-	<fval name="copyQueryParams"><value>true</value></fval>
-	<fval name="corsProfile"><value contentType="reference">-1</value></fval>
-	<fval name="corsUsage"><value xsi:nil="true"></value></fval>
-	<fval name="description"><value>get token</value></fval>
-	<fval name="descriptionLocation"><value>INTERNAL</value></fval>
-	<fval name="destinationContentType"><value>application/x-www-form-urlencoded</value></fval>
-	<fval name="destinationHttpVerb"><value>*</value></fval>
-	<fval name="destinationPath"><value xsi:nil="true"></value></fval>
-	<fval name="enableAccessLogging"><value>0</value></fval>
-	<fval name="enabled"><value>1</value></fval>
-	<fval name="evaluate"><value>1</value></fval>
-	<fval name="filterCircuit"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='Generated Policies'/><key type='CircuitContainer'><id field='name' value='REST API&apos;s'/><key type='CircuitContainer'><id field='name' value='Get Token'/><key type='FilterCircuit'><id field='name' value='get token'/></key></key></key></key>	</value></fval>
-	<fval name="httpMethod"><value>POST</value></fval>
-	<fval name="id"><value>0e95a4a2-fa5d-4413-9c0b-53af027b8c1b</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="markdownFile"><value></value></fval>
-	<fval name="name"><value>get token</value></fval>
-	<fval name="notes"><value></value></fval>
-	<fval name="pathMatching"><value>EXACT</value></fval>
-	<fval name="payloadMask"><value>0</value></fval>
-	<fval name="responseSchema"><value contentType="reference">-1</value></fval>
-	<fval name="trafficMonitoringEnabled"><value>true</value></fval>
-	<fval name="uriprefix"><value>/oauth/token</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethodQueryStringParameter" entityPK="-3015651114360234430" parentPK="7384572441962470168">
-	<fval name="allowMultiple"><value>false</value></fval>
-	<fval name="dataType"><value>string</value></fval>
-	<fval name="description"><value>application/x-www-form-urlencoded</value></fval>
-	<fval name="name"><value>Content-Type</value></fval>
-	<fval name="paramType"><value>header</value></fval>
-	<fval name="required"><value>false</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethodQueryStringParameter" entityPK="-547001490962661" parentPK="7384572441962470168">
-	<fval name="allowMultiple"><value>false</value></fval>
-	<fval name="dataType"><value>string</value></fval>
-	<fval name="description"><value>client_credentials</value></fval>
-	<fval name="name"><value>grant_type</value></fval>
-	<fval name="paramType"><value>form</value></fval>
-	<fval name="required"><value>true</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethodQueryStringParameter" entityPK="970640908116680952" parentPK="7384572441962470168">
-	<fval name="allowMultiple"><value>false</value></fval>
-	<fval name="dataType"><value>string</value></fval>
-	<fval name="description"><value>Basic base64(client_id:client_secret)</value></fval>
-	<fval name="name"><value>Authorization</value></fval>
-	<fval name="paramType"><value>header</value></fval>
-	<fval name="required"><value>true</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="HTTP" entityPK="-1912314198682007983" parentPK="-8201110922793724672">
 	<fval name="name"><value>API Portal</value></fval>
 </entity>
@@ -2569,13 +2494,13 @@
 	<fval name="trafficMonitoringEnabled"><value>true</value></fval>
 	<fval name="uriprefix"><value>/common/components/apiportal/apiAttrs.js</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="6471873285505193113" parentPK="4610906674924138656">
-	<fval name="name"><value>X-XSS-Protection</value></fval>
-	<fval name="value"><value>1; mode=block</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-8101646425068270800" parentPK="4610906674924138656">
 	<fval name="name"><value>Expires</value></fval>
 	<fval name="value"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="6471873285505193113" parentPK="4610906674924138656">
+	<fval name="name"><value>X-XSS-Protection</value></fval>
+	<fval name="value"><value>1; mode=block</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="Property" entityPK="-3939490521105911400" parentPK="4610906674924138656">
 	<fval name="name"><value>Cache-Control</value></fval>
@@ -3300,44 +3225,6 @@
 	<fval name="name"><value>CUSTOM_POLICY_REQ</value></fval>
 	<fval name="priority"><value>1</value></fval>
 </entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="XMLFirewall" entityPK="-8448536640063155586" parentPK="1000852335006416473">
-	<fval name="corsUsage"><value>HTTP</value></fval>
-	<fval name="enableAccessLogging"><value>0</value></fval>
-	<fval name="enabled"><value>1</value></fval>
-	<fval name="evaluate"><value>1</value></fval>
-	<fval name="filterCircuit"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='Sample Policies'/><key type='CircuitContainer'><id field='name' value='Web Services'/><key type='CircuitContainer'><id field='name' value='Virtualised StockQuote Service'/><key type='FilterCircuit'><id field='name' value='Main Policy'/></key></key></key></key>	</value></fval>
-	<fval name="httpMethod"><value>*</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="pathMatching"><value>LONGEST</value></fval>
-	<fval name="payloadMask"><value>0</value></fval>
-	<fval name="trafficMonitoringEnabled"><value>true</value></fval>
-	<fval name="uriprefix"><value>/main/stockquote</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortableCircuitReference" entityPK="2031249533399012740" parentPK="-8448536640063155586">
-	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>CUSTOM_POLICY_REQ</value></fval>
-	<fval name="priority"><value>1</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortableCircuitReference" entityPK="9119796647937161959" parentPK="-8448536640063155586">
-	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
-	<fval name="evaluate"><value>true</value></fval>
-	<fval name="name"><value>CUSTOM_POLICY_RSP</value></fval>
-	<fval name="priority"><value>3</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SoftCircuitReference" entityPK="8958322386071200254" parentPK="-8448536640063155586">
-	<fval name="circuitPK"><value>system.policy.response</value></fval>
-	<fval name="evaluate"><value>0</value></fval>
-	<fval name="name"><value>GLOBAL_POLICY_RSP</value></fval>
-	<fval name="priority"><value>4</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SoftCircuitReference" entityPK="-8385158981742042796" parentPK="-8448536640063155586">
-	<fval name="circuitPK"><value>system.policy.request</value></fval>
-	<fval name="evaluate"><value>0</value></fval>
-	<fval name="name"><value>GLOBAL_POLICY_REQ</value></fval>
-	<fval name="priority"><value>0</value></fval>
-</entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="XMLFirewall" entityPK="-6440925663987164456" parentPK="1000852335006416473">
 	<fval name="corsUsage"><value>HTTP</value></fval>
 	<fval name="enableAccessLogging"><value>0</value></fval>
@@ -3371,6 +3258,44 @@
 	<fval name="priority"><value>4</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SoftCircuitReference" entityPK="-3506811671583164333" parentPK="-6440925663987164456">
+	<fval name="circuitPK"><value>system.policy.request</value></fval>
+	<fval name="evaluate"><value>0</value></fval>
+	<fval name="name"><value>GLOBAL_POLICY_REQ</value></fval>
+	<fval name="priority"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="XMLFirewall" entityPK="-8448536640063155586" parentPK="1000852335006416473">
+	<fval name="corsUsage"><value>HTTP</value></fval>
+	<fval name="enableAccessLogging"><value>0</value></fval>
+	<fval name="enabled"><value>1</value></fval>
+	<fval name="evaluate"><value>1</value></fval>
+	<fval name="filterCircuit"><value contentType="reference">
+<key type='CircuitContainer'><id field='name' value='Sample Policies'/><key type='CircuitContainer'><id field='name' value='Web Services'/><key type='CircuitContainer'><id field='name' value='Virtualised StockQuote Service'/><key type='FilterCircuit'><id field='name' value='Main Policy'/></key></key></key></key>	</value></fval>
+	<fval name="httpMethod"><value>*</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="pathMatching"><value>LONGEST</value></fval>
+	<fval name="payloadMask"><value>0</value></fval>
+	<fval name="trafficMonitoringEnabled"><value>true</value></fval>
+	<fval name="uriprefix"><value>/main/stockquote</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortableCircuitReference" entityPK="2031249533399012740" parentPK="-8448536640063155586">
+	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
+	<fval name="evaluate"><value>true</value></fval>
+	<fval name="name"><value>CUSTOM_POLICY_REQ</value></fval>
+	<fval name="priority"><value>1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortableCircuitReference" entityPK="9119796647937161959" parentPK="-8448536640063155586">
+	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
+	<fval name="evaluate"><value>true</value></fval>
+	<fval name="name"><value>CUSTOM_POLICY_RSP</value></fval>
+	<fval name="priority"><value>3</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SoftCircuitReference" entityPK="8958322386071200254" parentPK="-8448536640063155586">
+	<fval name="circuitPK"><value>system.policy.response</value></fval>
+	<fval name="evaluate"><value>0</value></fval>
+	<fval name="name"><value>GLOBAL_POLICY_RSP</value></fval>
+	<fval name="priority"><value>4</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SoftCircuitReference" entityPK="-8385158981742042796" parentPK="-8448536640063155586">
 	<fval name="circuitPK"><value>system.policy.request</value></fval>
 	<fval name="evaluate"><value>0</value></fval>
 	<fval name="name"><value>GLOBAL_POLICY_REQ</value></fval>
@@ -4405,7 +4330,7 @@
 	<fval name="enabled"><value>1</value></fval>
 	<fval name="evaluate"><value>1</value></fval>
 	<fval name="filterCircuit"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='01-DO'/><key type='FilterCircuit'><id field='name' value='01-Balance Inquiry'/></key></key>	</value></fval>
+<key type='CircuitContainer'><id field='name' value='SNAP TOKEN'/><key type='FilterCircuit'><id field='name' value='01-Balance Inquiry'/></key></key>	</value></fval>
 	<fval name="httpMethod"><value>*</value></fval>
 	<fval name="logMask"><value>2</value></fval>
 	<fval name="pathMatching"><value>LONGEST</value></fval>
@@ -4436,97 +4361,6 @@
 	<fval name="evaluate"><value>true</value></fval>
 	<fval name="name"><value>CUSTOM_POLICY_RSP</value></fval>
 	<fval name="priority"><value>3</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIBroker" entityPK="-7965555920959037129" parentPK="-3989993467495113328">
-	<fval name="apiVersion"><value>1.0</value></fval>
-	<fval name="corsProfile"><value contentType="reference">-1</value></fval>
-	<fval name="corsUsage"><value xsi:nil="true"></value></fval>
-	<fval name="description"><value></value></fval>
-	<fval name="descriptionLocation"><value>INTERNAL</value></fval>
-	<fval name="destination"><value xsi:nil="true"></value></fval>
-	<fval name="enableAccessLogging"><value>0</value></fval>
-	<fval name="enabled"><value>1</value></fval>
-	<fval name="evaluate"><value>1</value></fval>
-	<fval name="httpMethod"><value>*</value></fval>
-	<fval name="id"><value>af2077b2-e8f7-4185-b56d-c74569b20263</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="markdownFile"><value></value></fval>
-	<fval name="name"><value>Get Token B2B</value></fval>
-	<fval name="pathMatching"><value>LONGEST</value></fval>
-	<fval name="payloadMask"><value>0</value></fval>
-	<fval name="routingType"><value>CUSTOM</value></fval>
-	<fval name="summary"><value>Snap Token B2B BI</value></fval>
-	<fval name="trafficMonitoringEnabled"><value>true</value></fval>
-	<fval name="uriprefix"><value>/snap</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethod" entityPK="4204138945287444913" parentPK="-7965555920959037129">
-	<fval name="blockUnspecifiedParams"><value>0</value></fval>
-	<fval name="checkSourceContentType"><value>false</value></fval>
-	<fval name="copyContentType"><value>INBOUND</value></fval>
-	<fval name="copyQueryParams"><value>true</value></fval>
-	<fval name="corsProfile"><value contentType="reference">-1</value></fval>
-	<fval name="corsUsage"><value xsi:nil="true"></value></fval>
-	<fval name="description"><value>API Access Token B2B</value></fval>
-	<fval name="descriptionLocation"><value>INTERNAL</value></fval>
-	<fval name="destinationContentType"><value>application/x-www-form-urlencoded</value></fval>
-	<fval name="destinationHttpVerb"><value>*</value></fval>
-	<fval name="destinationPath"><value xsi:nil="true"></value></fval>
-	<fval name="enableAccessLogging"><value>0</value></fval>
-	<fval name="enabled"><value>1</value></fval>
-	<fval name="evaluate"><value>1</value></fval>
-	<fval name="filterCircuit"><value contentType="reference">
-<key type='CircuitContainer'><id field='name' value='Generated Policies'/><key type='CircuitContainer'><id field='name' value='REST API&apos;s'/><key type='CircuitContainer'><id field='name' value='Get Token B2B'/><key type='FilterCircuit'><id field='name' value='Access Token Request'/></key></key></key></key>	</value></fval>
-	<fval name="httpMethod"><value>POST</value></fval>
-	<fval name="id"><value>b7162551-3a30-4de6-b056-dda4c9530c85</value></fval>
-	<fval name="logMask"><value>2</value></fval>
-	<fval name="markdownFile"><value></value></fval>
-	<fval name="name"><value>Access Token Request</value></fval>
-	<fval name="notes"><value></value></fval>
-	<fval name="pathMatching"><value>EXACT</value></fval>
-	<fval name="payloadMask"><value>0</value></fval>
-	<fval name="responseSchema"><value contentType="reference">-1</value></fval>
-	<fval name="trafficMonitoringEnabled"><value>true</value></fval>
-	<fval name="uriprefix"><value>/v1/access-token/b2b</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethodQueryStringParameter" entityPK="8308217406628131987" parentPK="4204138945287444913">
-	<fval name="allowMultiple"><value>false</value></fval>
-	<fval name="dataType"><value>string</value></fval>
-	<fval name="description"><value>Content-Type</value></fval>
-	<fval name="name"><value>Content-Type</value></fval>
-	<fval name="paramType"><value>header</value></fval>
-	<fval name="required"><value>false</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethodQueryStringParameter" entityPK="54372466882488130" parentPK="4204138945287444913">
-	<fval name="allowMultiple"><value>false</value></fval>
-	<fval name="dataType"><value>string</value></fval>
-	<fval name="description"><value>X-TIMESTAMP</value></fval>
-	<fval name="name"><value>X-TIMESTAMP</value></fval>
-	<fval name="paramType"><value>header</value></fval>
-	<fval name="required"><value>false</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethodQueryStringParameter" entityPK="3196810498636580251" parentPK="4204138945287444913">
-	<fval name="allowMultiple"><value>false</value></fval>
-	<fval name="dataType"><value>string</value></fval>
-	<fval name="description"><value>grant_type</value></fval>
-	<fval name="name"><value>grant_type</value></fval>
-	<fval name="paramType"><value>body</value></fval>
-	<fval name="required"><value>false</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethodQueryStringParameter" entityPK="6000175631638733462" parentPK="4204138945287444913">
-	<fval name="allowMultiple"><value>false</value></fval>
-	<fval name="dataType"><value>string</value></fval>
-	<fval name="description"><value>X-SIGNATURE</value></fval>
-	<fval name="name"><value>X-SIGNATURE</value></fval>
-	<fval name="paramType"><value>header</value></fval>
-	<fval name="required"><value>false</value></fval>
-</entity>
-<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethodQueryStringParameter" entityPK="3193747414105028144" parentPK="4204138945287444913">
-	<fval name="allowMultiple"><value>false</value></fval>
-	<fval name="dataType"><value>string</value></fval>
-	<fval name="description"><value>X-CLIENT-KEY</value></fval>
-	<fval name="name"><value>X-CLIENT-KEY</value></fval>
-	<fval name="paramType"><value>header</value></fval>
-	<fval name="required"><value>false</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="XMLFirewall" entityPK="4865557967371462820" parentPK="-3989993467495113328">
 	<fval name="corsUsage"><value>HTTP</value></fval>
@@ -4675,6 +4509,135 @@
 	<fval name="evaluate"><value>true</value></fval>
 	<fval name="name"><value>CUSTOM_POLICY_REQ</value></fval>
 	<fval name="priority"><value>1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="XMLFirewall" entityPK="-1515300331753905812" parentPK="-3989993467495113328">
+	<fval name="corsProfile"><value contentType="reference">-1</value></fval>
+	<fval name="corsUsage"><value>HTTP</value></fval>
+	<fval name="enableAccessLogging"><value>0</value></fval>
+	<fval name="enabled"><value>1</value></fval>
+	<fval name="evaluate"><value>1</value></fval>
+	<fval name="filterCircuit"><value contentType="reference">
+<key type='CircuitContainer'><id field='name' value='SNAP TOKEN'/><key type='FilterCircuit'><id field='name' value='01-Access Token Service Snap Test'/></key></key>	</value></fval>
+	<fval name="httpMethod"><value>POST</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="pathMatching"><value>LONGEST</value></fval>
+	<fval name="payloadMask"><value>0</value></fval>
+	<fval name="trafficMonitoringEnabled"><value>1</value></fval>
+	<fval name="uriprefix"><value>/api/v1/access-token/b2b2</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortableCircuitReference" entityPK="-990035395429988759" parentPK="-1515300331753905812">
+	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
+	<fval name="evaluate"><value>true</value></fval>
+	<fval name="name"><value>CUSTOM_POLICY_REQ</value></fval>
+	<fval name="priority"><value>1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortableCircuitReference" entityPK="6568512824900538741" parentPK="-1515300331753905812">
+	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
+	<fval name="evaluate"><value>true</value></fval>
+	<fval name="name"><value>CUSTOM_POLICY_RSP</value></fval>
+	<fval name="priority"><value>3</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SoftCircuitReference" entityPK="8867206155189004267" parentPK="-1515300331753905812">
+	<fval name="circuitPK"><value>system.policy.request</value></fval>
+	<fval name="evaluate"><value>1</value></fval>
+	<fval name="name"><value>GLOBAL_POLICY_REQ</value></fval>
+	<fval name="priority"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SoftCircuitReference" entityPK="-4531767615501724639" parentPK="-1515300331753905812">
+	<fval name="circuitPK"><value>system.policy.response</value></fval>
+	<fval name="evaluate"><value>1</value></fval>
+	<fval name="name"><value>GLOBAL_POLICY_RSP</value></fval>
+	<fval name="priority"><value>4</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="XMLFirewall" entityPK="-7244027306144386322" parentPK="-3989993467495113328">
+	<fval name="corsProfile"><value contentType="reference">-1</value></fval>
+	<fval name="corsUsage"><value>HTTP</value></fval>
+	<fval name="enableAccessLogging"><value>0</value></fval>
+	<fval name="enabled"><value>1</value></fval>
+	<fval name="evaluate"><value>1</value></fval>
+	<fval name="filterCircuit"><value contentType="reference">
+<key type='CircuitContainer'><id field='name' value='SNAP TOKEN'/><key type='FilterCircuit'><id field='name' value='01-Access Token Service Snap BI-BSB'/></key></key>	</value></fval>
+	<fval name="httpMethod"><value>POST</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="pathMatching"><value>LONGEST</value></fval>
+	<fval name="payloadMask"><value>0</value></fval>
+	<fval name="trafficMonitoringEnabled"><value>1</value></fval>
+	<fval name="uriprefix"><value>/api/v1/access-token/b2b</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortableCircuitReference" entityPK="5484509839014226013" parentPK="-7244027306144386322">
+	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
+	<fval name="evaluate"><value>true</value></fval>
+	<fval name="name"><value>CUSTOM_POLICY_REQ</value></fval>
+	<fval name="priority"><value>1</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="PortableCircuitReference" entityPK="3506780532540723586" parentPK="-7244027306144386322">
+	<fval name="circuitPK"><value contentType="reference">-1</value></fval>
+	<fval name="evaluate"><value>true</value></fval>
+	<fval name="name"><value>CUSTOM_POLICY_RSP</value></fval>
+	<fval name="priority"><value>3</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SoftCircuitReference" entityPK="-8981044771852649619" parentPK="-7244027306144386322">
+	<fval name="circuitPK"><value>system.policy.request</value></fval>
+	<fval name="evaluate"><value>1</value></fval>
+	<fval name="name"><value>GLOBAL_POLICY_REQ</value></fval>
+	<fval name="priority"><value>0</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="SoftCircuitReference" entityPK="-7618818223515626686" parentPK="-7244027306144386322">
+	<fval name="circuitPK"><value>system.policy.response</value></fval>
+	<fval name="evaluate"><value>1</value></fval>
+	<fval name="name"><value>GLOBAL_POLICY_RSP</value></fval>
+	<fval name="priority"><value>4</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIBroker" entityPK="603478295245843245" parentPK="-3989993467495113328">
+	<fval name="apiVersion"><value>1.0</value></fval>
+	<fval name="corsProfile"><value contentType="reference">-1</value></fval>
+	<fval name="corsUsage"><value xsi:nil="true"></value></fval>
+	<fval name="description"><value></value></fval>
+	<fval name="descriptionLocation"><value>INTERNAL</value></fval>
+	<fval name="destination"><value xsi:nil="true"></value></fval>
+	<fval name="enableAccessLogging"><value>0</value></fval>
+	<fval name="enabled"><value>1</value></fval>
+	<fval name="evaluate"><value>1</value></fval>
+	<fval name="httpMethod"><value>*</value></fval>
+	<fval name="id"><value>a1d326e3-f317-4ffc-bf8e-6f4c18f707c5</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="markdownFile"><value></value></fval>
+	<fval name="name"><value>SNAP TOKEN BI</value></fval>
+	<fval name="pathMatching"><value>LONGEST</value></fval>
+	<fval name="payloadMask"><value>0</value></fval>
+	<fval name="routingType"><value>CUSTOM</value></fval>
+	<fval name="summary"><value>Get Token</value></fval>
+	<fval name="trafficMonitoringEnabled"><value>true</value></fval>
+	<fval name="uriprefix"><value>/api</value></fval>
+</entity>
+<entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="CoreAPIMethod" entityPK="1640292966131085654" parentPK="603478295245843245">
+	<fval name="blockUnspecifiedParams"><value>true</value></fval>
+	<fval name="checkSourceContentType"><value>false</value></fval>
+	<fval name="copyContentType"><value>INBOUND</value></fval>
+	<fval name="copyQueryParams"><value>true</value></fval>
+	<fval name="corsProfile"><value contentType="reference">-1</value></fval>
+	<fval name="corsUsage"><value xsi:nil="true"></value></fval>
+	<fval name="description"><value>Get Token</value></fval>
+	<fval name="descriptionLocation"><value>INTERNAL</value></fval>
+	<fval name="destinationContentType"><value>application/x-www-form-urlencoded</value></fval>
+	<fval name="destinationHttpVerb"><value>*</value></fval>
+	<fval name="destinationPath"><value xsi:nil="true"></value></fval>
+	<fval name="enableAccessLogging"><value>0</value></fval>
+	<fval name="enabled"><value>1</value></fval>
+	<fval name="evaluate"><value>1</value></fval>
+	<fval name="filterCircuit"><value contentType="reference">
+<key type='CircuitContainer'><id field='name' value='Generated Policies'/><key type='CircuitContainer'><id field='name' value='REST API&apos;s'/><key type='CircuitContainer'><id field='name' value='SNAP TOKEN BI'/><key type='FilterCircuit'><id field='name' value='Access Token Snap BI'/></key></key></key></key>	</value></fval>
+	<fval name="httpMethod"><value>POST</value></fval>
+	<fval name="id"><value>fd87dbb9-dbd8-400b-addf-5ba0384cb1c0</value></fval>
+	<fval name="logMask"><value>2</value></fval>
+	<fval name="markdownFile"><value></value></fval>
+	<fval name="name"><value>Access Token Snap BI</value></fval>
+	<fval name="notes"><value></value></fval>
+	<fval name="pathMatching"><value>EXACT</value></fval>
+	<fval name="payloadMask"><value>0</value></fval>
+	<fval name="responseSchema"><value contentType="reference">-1</value></fval>
+	<fval name="trafficMonitoringEnabled"><value>true</value></fval>
+	<fval name="uriprefix"><value>/v1/access-token/b2b</value></fval>
 </entity>
 <entity xmlns="http://www.vordel.com/2005/06/24/entityStore"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="HTTP" entityPK="3447876337230484819" parentPK="-8201110922793724672">
 	<fval name="name"><value>OAuth 2.0 Services</value></fval>
